@@ -7,7 +7,9 @@
 	display:  grid;
 	grid-template-columns: repeat(10, 1fr);
 }
-
+.grid-container {
+  display: inline-grid;
+}
 .grid-10.gap, 
 .grid.gap {
 	--grid-gap: 1em;

@@ -20,11 +20,11 @@
 
 
 body {
-	margin: 0;
+	margin: 100px;
 	font-size: 100%;
-	font-family:  'roboto mono', serif;
+	font-family:  'roboto mono', monospace;
 	font-weight: 300;
-	color: 
+	color: ;
 }
 
 h1,
@@ -39,23 +39,34 @@ h6 {
 }
 
 h1{
-	font-size: 60px;
+	font-family: poppins, sans-serif;
+	font-size: 150px;
+	margin-top: 0;
 	margin-bottom: 0;
 	border-bottom: 0;
 }
-h2{
-	font-size: 50px;
+
+h2{	
+	font-family: poppins, sans-serif;
+	font-size: 70px;
+	margin-bottom: 0;
+	margin-top: 0;
+	border-bottom: 0;
 }
+
 h3{ 
+	color: #EB0C27;
 	margin-top: 0;
 	font-size: 40px;
 
 }
-h4{
+h4{ font-family: poppins, sans-serif;
 	font-size: 30px;
+	font-weight: 300;
 }
-h5{
+h5{ font-family: 'roboto mono', monospace;
 	font-size: 20px;
+	font-weight: 300;
 }
 h6{
 	font-size: 15px;
@@ -110,8 +121,36 @@ html, body {
 	max-width: 1000px;
 	margin-right: auto;
 	margin-left: auto;
-
 }
+
+.grid-container {
+  display: inline-grid;
+}
+.container-section {
+	position: absolute;
+	top: 700px;
+	background-color: #EB0C27;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left:120px;
+	padding-right: 120px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.main-text{
+  position: absolute;
+  top: 70px;
+  left: 120px;
+  width: 1000px;
+}
+.main-pic{
+  position: absolute;
+  top: 120px;
+  left: 825px;
+}
+
+
 .hidden {
 	display: none;
 }
@@ -131,8 +170,7 @@ html, body {
 
 
 /* component classes */
-.nav ul {
-	list-style-type: none;
+.nav {
 	margin-top: 50px;
 	margin-bottom: 0;
 	padding-left: 50px;
@@ -156,8 +194,8 @@ html, body {
 }
 .nav a {
 	display: inline-block;
-	padding: 0.5em 0.5em;
-	padding-left: 2em;
+	padding: 5em 5em;
+	padding-left: 10em;
 }
 	
 
@@ -182,14 +220,13 @@ html, body {
 
 	}
 
-	.nav-pills a{
+.nav-pills a{
   display: inline-block;
   background-color: black;
   color: white;
   text-align: center;
-  margin-top: : 30px;
-  margin-left: : 30px;
-  text-decoration: none;
+  margin-top: : 20px;
+  margin-left: : 150px;
   font-size: 1em;
   border-radius: 5px;
   line-height: 4em;
