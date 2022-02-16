@@ -22,15 +22,28 @@ include_once "php/functions.php";
 	<div class="container-section">
 		<h3 style="color: #000000;">Projects </h4>
 		<h5>Below are some of my projects. Come take a look! </h5>
-		<div class="grid-container">
- 		    <div class="grid-item">1</div>
-		    <div class="grid-item">2</div>
-  			<div class="grid-item">3</div>
-  			<div class="grid-item">4</div>
-  			<div class="grid-item">5</div>
-  			<div class="grid-item">6</div>
-		</div>		
-	</div>
+		<br>
+			<div class="row" style="margin: 0 -50px">
+			  <div class="column" style="float: left;width: 33%;padding: 0 10px;">
+ 			  		<div class="card soft">
+ 			  			<h4>Shoose</h4>
+ 			  			<h5 style="color: #F4F4F4">An all-in-one shoe buying app, with curated lists and easy purchasing.</h5>
+ 			  		</div>
+ 			  </div>
+ 			  <div class="column" style="float: left;width: 33%;padding: 0 10px;">
+ 			   		<div class="card soft">
+ 			   			<h4>Planit</h4>
+ 			   			<h5 style="color: #F4F4F4">A group chat and planning app, with easy hangout and event features.</h5>
+ 			   		</div>
+ 			  </div>
+ 			  <div class="column" style="float: left;width: 33%;padding: 0 10px;">
+ 			   		<div class="card soft">
+ 			   			<h4>gmr</h4>
+ 			   			<h5 style="color: #F4F4F4">A videogame achievement tracker app, with multi-platform syncing.</h5>
+ 			   		</div>
+  			  </div>
+			</div>
+		</div>
 
 
 

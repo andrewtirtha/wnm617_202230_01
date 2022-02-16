@@ -1,4 +1,4 @@
-<base href="/aau/wnm617/tirtha.andrew/">
+<base href="/aau/wnm617/tirtha.andrew/profile/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
