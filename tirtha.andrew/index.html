@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Golflog</title>
+
+   <base href="/aau/wnm617/tirtha.andrew/">
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+   <link rel="stylesheet" href="css/app.css">
+
+   <script src="lib/js/jquery-2.2.4.min.js"></script>
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+   <script src="js/app.js"></script>
+</head>
+<body>
+
+   <section data-role="page" id="signin-page">
+      <div data-role="main">
+         <form id="signin-form" class="form">
+            <div class="form-control">
+               <label for="signin-username" class="form-label">Username</label>
+               <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your Username">
+            </div>
+            <div class="form-control">
+               <label for="signin-password" class="form-label">Password</label>
+               <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Type your Password">
+            </div>
+            <!-- <input type="submit" data-role="none"> -->
+            <div class="form-control">
+               <a href="#recent-page" class="form-button">Submit</a>
+            </div>
+         </form>
+      </div>
+   </section>
+
+
+   <section data-role="page" id="recent-page">
+      <div data-role="main">
+         map
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+
+   <section data-role="page" id="list-page">
+      <header data-role="header">
+         <h1>Course List</h1>
+         <ul>
+            <li class="flex-stretch"></li>
+            <li><a href="#">Add</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <!-- ul>li*10>a[href=#course-profile-page]>{Course $} -->
+         <ul>
+            <li><a href="#course-profile-page">Course 1</a></li>
+            <li><a href="#course-profile-page">Course 2</a></li>
+            <li><a href="#course-profile-page">Course 3</a></li>
+            <li><a href="#course-profile-page">Course 4</a></li>
+            <li><a href="#course-profile-page">Course 5</a></li>
+            <li><a href="#course-profile-page">Course 6</a></li>
+            <li><a href="#course-profile-page">Course 7</a></li>
+            <li><a href="#course-profile-page">Course 8</a></li>
+            <li><a href="#course-profile-page">Course 9</a></li>
+            <li><a href="#course-profile-page">Course 10</a></li>
+         </ul>
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+
+   <section data-role="page" id="course-profile-page">
+      <header data-role="header">
+         <h1>Course</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         Course profile
+         <div>
+         <a href="#course-edit-page">Edit</a>
+         </div>
+      </div>
+   </section>
+
+
+   <section data-role="page" id="user-profile-page">
+      <div data-role="main">
+         user profile
+         <a href="#user-edit-page">Edit</a>
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+   <section data-role="page" id="user-edit-page">
+      <header data-role="header">
+         <h1>Edit User</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#list-page">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+        Form
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+   
+</body>
+</html>
