@@ -13,12 +13,21 @@
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
    <script src="js/app.js"></script>
+   <script src="js/signin.js"></script>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
    <section data-role="page" id="signin-page">
-      <div data-role="main">
-         <form id="signin-form" class="form">
+      <div data-role="main" class="display-flex flex-column">
+         <div class="flex-stretch"></div>
+         <div class="logo-main">
+            <img class="logo" src="images/logo.png">
+         </div>
+         <form id="signin-form" class="form" data-ajax="false">
             <div class="form-control">
                <label for="signin-username" class="form-label">Username</label>
                <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your Username">
@@ -29,16 +38,52 @@
             </div>
             <!-- <input type="submit" data-role="none"> -->
             <div class="form-control">
-               <a href="#recent-page" class="form-button">Submit</a>
+               <button type="submit" class="form-button" data-role="none">Submit</button>
+            </div>
+            <div class="form-control" style="text-align:center;font-size:0.8em;">
+               <p>New to the app? <a href="#signup-page">Sign Up!</a></p>
             </div>
          </form>
+         <div class="flex-stretch"></div>
+      </div>
+   </section>
+
+    <section data-role="page" id="signup-page">
+      <div data-role="main" class="display-flex flex-column">
+         <div class="flex-stretch"></div>
+         <form id="signup-form" class="form" data-ajax="false">
+            <div class="form-control">
+               <label for="signup-username" class="form-label">Username</label>
+               <input type="text" id="signup-username" data-role="none" class="form-input" placeholder="Type your Username">
+            </div>
+            <div class="form-control">
+               <label for="signup-password" class="form-label">Password</label>
+               <input type="password" id="signup-password" data-role="none" class="form-input" placeholder="Type your Password">
+            </div>
+            <div class="form-control">
+               <label for="signup-password2" class="form-label">Confirm Password</label>
+               <input type="password" id="signup-password2" data-role="none" class="form-input" placeholder="Type your Password again">
+            </div>
+            <!-- <input type="submit" data-role="none"> -->
+            <div class="form-control">
+               <!-- <button type="button" class="form-button">Submit</button> -->
+               <a href="#recent-page" class="form-button">Sign Up</a>
+            </div>
+            <div class="form-control" style="text-align:center;font-size:0.8em;">
+               <p>Already have an account? <a href="#signin-page">Sign In!</a></p>
+            </div>
+         </form>
+         <div class="flex-stretch"></div>
       </div>
    </section>
 
 
-   <section data-role="page" id="recent-page">
-      <div data-role="main">
-         map
+
+     <section data-role="page" id="recent-page">
+      <div data-role="main" class="map-placeholder">
+         <div class="marker" style="position:absolute;top:69vh;left:45vw;" data-activate="#map-drawer">
+            <img src="images/pin.png" alt="" class="icon">
+         </div>
       </div>
       <footer data-role="footer">
          <ul>
@@ -47,7 +92,30 @@
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
+
+      <div class="modal" id="map-drawer">
+         <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
+         <div class="modal-drawer top">
+            <div class="modal-head display-flex">
+               <div class="flex-none">Course Info</div>
+               <div class="flex-stretch"></div>
+               <div class="flex-none">
+                  <a href="#" data-deactivate="#map-drawer">&times;</a>
+               </div>
+               
+            </div>
+            <div class="modal-body">
+               <h2>The Golf Club at Moffett Field</h2>
+               <br>
+               <img src="images/moffett.jpeg" alt="" class="course-img">
+               <br>
+               <p class="modal-info">The Golf Club at Moffett Field features a 18-hole golf course and is located near Mountain View, California. The course measures 6,517 yards from the back tees and plays to a par of 72. The course rating is 71.0 and Moffett Field has a slope rating of 126 on the kikuyu grass fairways. Moffett Field Golf Course opened in 1959 and is managed by OB Sports Golf Management.</p>
+               <br>
+            </div>
+         </div>
+      </div>
    </section>
+
 
 
    <section data-role="page" id="list-page">
@@ -55,7 +123,7 @@
          <h1>Course List</h1>
          <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#">Add</a></li>
+            <li><a href="#" >Add</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -103,6 +171,8 @@
       <div data-role="main">
          user profile
          <a href="#user-edit-page">Edit</a>
+         <br>
+         <a href="#" class="js-logout">Logout</a>
       </div>
       <footer data-role="footer">
          <ul>
@@ -132,7 +202,26 @@
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
+
+<div class="modal" id="map-drawer">
+   <div class="modal-back"></div>
+   <div class="modal-drawer">
+      <div class="modal-head"></div>
+   </div>
+
+</div>
+
    </section>
+
+   <div class="modal" id="list-add-animal-modal">
+      <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
+      <div class="modal-popup">
+         <div class="modal-head">!</div>
+         <div class="modal-body">!</div>
+         <div class="modal-foot">!</div>
+      </div>
+
+   </div>
    
 </body>
 </html>
