@@ -33,8 +33,22 @@ $(() => {
       $(target).toggleClass("active")
    })
    .on("click", "[data-activateone]", function() {
-      let target = $(this).data("activate");
+      let target = $(this).data("activateone");
       $(target).addClass("active")
          .siblings().removeClass("active")
    })
+
+   ;
+
+   $("[data-template]").each(function(){
+      let target = $(this).data("template");
+      $(this).html($(target).html())
+   });
+
+   [,"#recent-page","#list-page","#user-profile-page"].forEach((p,i)=>{
+      if(window.location.hash === p) {
+         $(`.nav-icon-set li:nth-child(${i})`).addClass("active");
+      }
+   });
+
 });

@@ -16,10 +16,12 @@
    <script src="js/signin.js"></script>
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+   <!-- sign in page -->
 
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
@@ -47,6 +49,8 @@
          <div class="flex-stretch"></div>
       </div>
    </section>
+
+    <!-- sign up page -->
 
     <section data-role="page" id="signup-page">
       <div data-role="main" class="display-flex flex-column">
@@ -77,21 +81,27 @@
       </div>
    </section>
 
-
+ <!-- recent page -->
 
      <section data-role="page" id="recent-page">
+      <header data-role="header">
+         <h1 class="ui-title" role="heading" aria-level="1">Map View</h1>
+
+      </header>
+      <div class="recent-search">
+            <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
+               <input type="search" data-role="none" placeholder="Search">
+            </form>
+            <div class="flex-none" style="line-height:3rem;padding:0 0.5em">
+               <img src="images/icons/filter.svg" style="vertical-align: middle;" alt="" class="icon">
+            </div>
+         </div>
       <div data-role="main" class="map-placeholder">
          <div class="marker" style="position:absolute;top:69vh;left:45vw;" data-activate="#map-drawer">
             <img src="images/pin.png" alt="" class="icon">
          </div>
       </div>
-      <footer data-role="footer">
-         <ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">List</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </footer>
+      <footer data-role="footer" data-template="#footer-template"></footer>
 
       <div class="modal" id="map-drawer">
          <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
@@ -116,92 +126,387 @@
       </div>
    </section>
 
+ <!-- list page -->
 
 
    <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>Course List</h1>
+      <h1 class="ui-title" role="heading" aria-level="1">Course List</h1>
          <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#" >Add</a></li>
+            <li><a href="#addnew-page" >Add New</a></li>
          </ul>
       </header>
       <div data-role="main">
          <!-- ul>li*10>a[href=#course-profile-page]>{Course $} -->
-         <ul>
-            <li><a href="#course-profile-page">Course 1</a></li>
-            <li><a href="#course-profile-page">Course 2</a></li>
-            <li><a href="#course-profile-page">Course 3</a></li>
-            <li><a href="#course-profile-page">Course 4</a></li>
-            <li><a href="#course-profile-page">Course 5</a></li>
-            <li><a href="#course-profile-page">Course 6</a></li>
-            <li><a href="#course-profile-page">Course 7</a></li>
-            <li><a href="#course-profile-page">Course 8</a></li>
-            <li><a href="#course-profile-page">Course 9</a></li>
-            <li><a href="#course-profile-page">Course 10</a></li>
+         <ul class="course-list">
+            <li class="course-list-item">
+               <a href="#course-profile-page">
+                  <div class="course-list-image"><img src="images/moffett.jpeg" alt=""></div>
+                  <div class="course-list-body">
+                     <div class="course-list-name">Moffett Field Golf Course</div>
+                     <div class="course-list-type">Municipial</div>
+                     <div class="course-list-location">Mountain View, CA</div>
+                  </div>
+               </a>
+            </li>
+            <li class="course-list-item">
+               <a href="#course-profile-page">
+                  <div class="course-list-image"><img src="images/crystalsprings.jpeg" alt=""></div>
+                  <div class="course-list-body">
+                     <div class="course-list-name">Crystal Springs Golf Course</div>
+                     <div class="course-list-type">Parkland</div>
+                     <div class="course-list-location">Burlingame, CA</div>
+                  </div>
+               </a>
+            </li>
+            <li class="course-list-item">
+               <a href="#course-profile-page">
+                  <div class="course-list-image"><img src="images/halfmoonbay.jpeg" alt=""></div>
+                  <div class="course-list-body">
+                     <div class="course-list-name">Half Moon Bay Ocean Course</div>
+                     <div class="course-list-type">Links</div>
+                     <div class="course-list-location">Half Moon Bay, CA</div>
+                  </div>
+               </a>
+            </li>
+            <li class="course-list-item">
+               <a href="#course-profile-page">
+                  <div class="course-list-image"><img src="images/bodega.jpeg" alt=""></div>
+                  <div class="course-list-body">
+                     <div class="course-list-name">The Links at Bodega Harbour</div>
+                     <div class="course-list-type">Links</div>
+                     <div class="course-list-location">Bodega Bay, CA</div>
+                  </div>
+               </a>
+            </li>
+            <li class="course-list-item">
+               <a href="#course-profile-page">
+                  <div class="course-list-image"><img src="images/presidio.jpeg" alt=""></div>
+                  <div class="course-list-body">
+                     <div class="course-list-name">Presidio Golf Course</div>
+                     <div class="course-list-type">Parkland</div>
+                     <div class="course-list-location">San Francisco, CA</div>
+                  </div>
+               </a>
+            </li>
+             <li class="course-list-item">
+               <a href="#course-profile-page">
+                  <div class="course-list-image"><img src="images/sunnyvale.jpeg" alt=""></div>
+                  <div class="course-list-body">
+                     <div class="course-list-name">Sunnyvale Municipial</div>
+                     <div class="course-list-type">Municipial</div>
+                     <div class="course-list-location">Sunnyvale, CA</div>
+                  </div>
+               </a>
+            </li>
+             <li class="course-list-item">
+               <a href="#course-profile-page">
+                  <div class="course-list-image"><img src="images/tpcharding.jpeg" alt=""></div>
+                  <div class="course-list-body">
+                     <div class="course-list-name">TPC Harding Park</div>
+                     <div class="course-list-type">Parkland</div>
+                     <div class="course-list-location">San Francisco, CA</div>
+                  </div>
+               </a>
+            </li>
+            <li class="course-list-item">
+               <a href="#course-profile-page">
+                  <div class="course-list-image"><img src="images/stonetree.jpeg" alt=""></div>
+                  <div class="course-list-body">
+                     <div class="course-list-name">Stone Tree Golf</div>
+                     <div class="course-list-type">Links</div>
+                     <div class="course-list-location">Novato, CA</div>
+                  </div>
+               </a>
+            </li>
+          
          </ul>
+         <div class="floater bottom right circle-button" data-activate="#list-add-course-modal">&plus;</div>
       </div>
-      <footer data-role="footer">
-         <ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">List</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </footer>
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 
+<!-- course profile -->
 
    <section data-role="page" id="course-profile-page">
       <header data-role="header">
-         <h1>Course</h1>
+         <h1>Course Profile</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+         <li>
+            <a href="#" data-rel="back">Back</a>
+         </li>
+         <li class="flex-stretch"></li>
+         <li>
+            <a href="#course-edit-page" data-role="none">
+               <img src="images/icons/edit.svg" class="edit-icon" alt="edit icon">
+            </a>
+         </li>
          </ul>
       </header>
+
       <div data-role="main">
-         Course profile
-         <div>
-         <a href="#course-edit-page">Edit</a>
-         </div>
+         <div data-role="main" class="overscroll">
+            <div class="text-center">
+                <img src="images/moffett.jpeg" alt="" class="profile-image">
+            </div>
+        </div>
+        <form class="course-form" id="course-profile-page" >
+         <p class="course-profile-title">Name</p>
+         <p class="course-profile-info">Moffett Field Golf Course</p>
+
+         <p class="course-profile-title">Type</p>
+         <p class="course-profile-info">Municipial</p>
+         
+         <p class="course-profile-title">Location</p>
+         <p class="course-profile-info">Mountain View, CA</p>
+
+         <p class="course-profile-title">Description</p>
+         <p class="course-profile-info">The Golf Club at Moffett Field features a 18-hole golf course and is located near Mountain View, California. The course measures 6,517 yards from the back tees and plays to a par of 72. The course rating is 71.0 and Moffett Field has a slope rating of 126 on the kikuyu grass fairways. Moffett Field Golf Course opened in 1959 and is managed by OB Sports Golf Management.</p>
+            
+         </form>
+        </div>
+         
       </div>
    </section>
 
+<!-- edit course profile -->
+
+<section data-role="page" id="course-edit-page">
+      <header data-role="header">
+         <h1>Edit Course Profile</h1>
+         <ul>
+            <li>
+                 <a href="#" data-rel="back">Back</a>
+            </li>
+            <li class="flex-stretch"></li>
+         </ul>
+      </header>
+
+      <div data-role="main">
+         <div data-role="main" class="overscroll">
+            <div class="text-center">
+                <img src="images/moffett.jpeg" alt="" class="profile-image">
+                <a href="#" class="change-photo-text" data-activate="#photo-upload-modal">Upload New Photo</a>
+            </div>
+        </div>
+
+
+
+        <div class="modal" id="photo-upload-modal">
+                <div class="modal-back" data-deactivate="#photo-upload-modal"></div>
+         <div class="modal-drawer top">
+            <div class="modal-head display-flex">
+               
+            </div>
+            <div class="modal-body">
+               <h4 class="modal-head-text">Please upload a new image</h4>
+                    <div class="upload">
+                     <input type="file" name="filename">
+                     <br>
+                     <input type="submit">
+                    </div>
+               </div>
+            </div>
+         </div>
+
+      <form class="course-form" id="course-edit-form" >
+         <div class="form-control"> 
+                <label for="edit-course-name" class="form-label">Name</label>
+                <input type="text" id="edit-course-name" data-role="none" class="form-input"
+                placeholder="Course 1">
+            </div>
+            <div class="form-control">
+                <label for="edit-type-selection" class="form-label">Type</label>
+               <select data-role="none" name="select" id="edit-type-selection" class="selection-edit">
+                   <option value="1">Links</option>
+                   <option value="2">Parkland</option>
+                   <option value="3">Municipial</option>
+               </select>
+            </div> 
+            <div class="form-control">
+                <label for="edit-course-info" class="form-label">Description</label>
+                <textarea name="edit-course-info" class="form-description" data-role="none" placeholder="This is golf course 1"></textarea>
+            </div> 
+            
+            <div class="form-control"> <a href="#course-profile-page" class="form-button">Save</a>
+            </div>
+       </form>
+        </div>
+         
+    </div>
+   </section>
+
+<!-- user profile page -->
 
    <section data-role="page" id="user-profile-page">
-      <div data-role="main">
-         user profile
-         <a href="#user-edit-page">Edit</a>
-         <br>
-         <a href="#" class="js-logout">Logout</a>
-      </div>
-      <footer data-role="footer">
+      <header data-role="header">
+         <h1>User Profile</h1>
          <ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">List</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
+         <li>
+            <a href="#" data-rel="back">Back</a>
+         </li>
+         <li class="flex-stretch"></li>
+         <li>
+            <a href="#user-edit-page" data-role="none">
+               <img src="images/icons/edit.svg" class="edit-icon" alt="edit icon">
+            </a>
+         </li>
          </ul>
-      </footer>
+      </header>
+
+      <div data-role="main">
+         <div data-role="main" class="overscroll">
+            <br>
+            <div class="text-center">
+                <img src="images/profile.png" alt="" class="user-profile-image">
+            </div>
+        </div>
+        <form class="user-form" id="user-profile-page" >
+         <p class="user-profile-title">Name</p>
+         <p class="user-profile-info">Andrew Tirtha</p>
+
+         <p class="user-profile-title">Age</p>
+         <p class="user-profile-info">25</p>
+         
+         <p class="user-profile-title">Handicap</p>
+         <p class="user-profile-info">25</p>
+         <br>
+         <br>
+         <br>
+         <div class="hotdog color">
+         <a href="#" class="js-logout">Logout</a>
+         </div>
+      </form>
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
+
+   <!-- user edit page -->
 
    <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>Edit User</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#list-page">Save</a></li>
-         </ul>
+         <li>
+            <a href="#" data-rel="back">Back</a>
+         </li>
+         <li class="flex-stretch"></li>
+      </ul>
       </header>
       <div data-role="main">
-        Form
-      </div>
-      <footer data-role="footer">
+         <div data-role="main" class="overscroll">
+            <div class="text-center">
+                <img src="images/profile.png" alt="" class="user-profile-image">
+                <br>
+                <a href="#" class="change-photo-text" data-activate="#user-photo-upload-modal">Upload New Photo</a>
+            </div>
+        </div>
+
+         <div class="modal" id="user-photo-upload-modal">
+                <div class="modal-back" data-deactivate="#user-photo-upload-modal">  
+                </div>
+            <div class="modal-drawer top">
+            <div class="modal-head display-flex">
+               
+            </div>
+            <div class="modal-body">
+               <h4 class="modal-head-text">Please upload a new image</h4>
+                    <div class="upload">
+                     <input type="file" name="filename">
+                     <br>
+                     <input type="submit">
+                    </div>
+               </div>
+            </div>
+         </div>
+
+         <form class="user-form" id="user-edit-form">
+            <div class="form-control"> 
+                <label for="edit-user-name" class="form-label">Name</label>
+                <input type="text" id="edit-user-name" data-role="none" class="form-input"
+                placeholder="Tiger Woods">
+            </div>
+            <div class="form-control">
+                <label for="edit-user-age" class="form-label">Age</label>
+                <input type="text" id="edit-user-age" data-role="none" class="form-input"
+                placeholder="32">
+            </div> 
+            <div class="form-control">
+                <label for="edit-user-handicap" class="form-label">Handicap</label>
+                <input type="text" id="edit-user-handicap" data-role="none" class="form-input"
+                placeholder="25">
+             </div>
+            
+            <div class="form-control"> <a href="#user-profile-page" class="form-button">Save</a>
+            </div>
+          </form>
+   </div>
+   </section>
+
+   <!-- Add New -->
+
+   <section data-role="page" id="addnew-page">
+        <header data-role="header">
+         <h1>Add New</h1>
          <ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">List</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </footer>
+         <li>
+            <a href="#" data-rel="back">Back</a>
+         </li>
+         <li class="flex-stretch"></li>
+      </ul>
+      </header>
+        
+       <div data-role="main">
+         <div data-role="main" class="overscroll">
+            <div class="text-center">
+            <img src="images/icons/camera.svg" alt="upload-icon" class="upload-icon" data-activate="#upload-course-modal">
+        </div>
+            <div class="modal" id="upload-course-modal">
+                <div class="modal-back" data-deactivate="#upload-course-modal">  
+                </div>
+               <div class="modal-drawer top">
+                  <div class="modal-head display-flex">
+               
+                  </div>
+                   <div class="modal-body">
+                     <h4 class="modal-head-text">Please upload a new image</h4>
+                    <div class="upload">
+                     <input type="file" name="filename">
+                     <br>
+                     <input type="submit">
+                    </div>
+                  </div>
+               </div>
+         </div>
+         <form class="course-form" id="course-edit-form" >
+         <div class="form-control"> 
+                <label for="edit-course-name" class="form-label">Name</label>
+                <input type="text" id="edit-course-name" data-role="none" class="form-input"
+                placeholder="Course 1">
+            </div>
+            <div class="form-control">
+                <label for="edit-type-selection" class="form-label">Type</label>
+               <select data-role="none" name="select" id="edit-type-selection" class="selection-edit">
+                   <option value="1">Links</option>
+                   <option value="2">Parkland</option>
+                   <option value="3">Municipial</option>
+               </select>
+            </div> 
+            <div class="form-control">
+                <label for="edit-course-info" class="form-label">Description</label>
+                <textarea name="edit-course-info" class="form-description" data-role="none" placeholder="This is golf course 1"></textarea>
+            </div> 
+            
+            <div class="form-control"> <a href="#course-profile-page" class="form-button">Save</a>
+            </div>
+         </form>
+      </div>
+         
+    </section>
+
+
 
 <div class="modal" id="map-drawer">
    <div class="modal-back"></div>
@@ -213,8 +518,8 @@
 
    </section>
 
-   <div class="modal" id="list-add-animal-modal">
-      <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
+   <div class="modal" id="list-add-course-modal">
+      <div class="modal-back" data-deactivate="#list-add-course-modal"></div>
       <div class="modal-popup">
          <div class="modal-head">!</div>
          <div class="modal-body">!</div>
@@ -222,6 +527,23 @@
       </div>
 
    </div>
+
+  <script type="text/template" id="footer-template">
+      <ul class="nav-icon-set">
+         <li><a href="#recent-page" data-activateone=".nav-icon-set li:nth-child(1)">
+            <span class="nav-icon"><img class="icon" src="images/icons/map.svg"></span>
+            <span class="nav-icon-label">Recent</span>
+         </a></li>
+         <li><a href="#list-page" data-activateone=".nav-icon-set li:nth-child(2)">
+            <span class="nav-icon"><img class="icon" src="images/icons/list.svg"></span>
+            <span class="nav-icon-label">List</span>
+         </a></li>
+         <li><a href="#user-profile-page" data-activateone=".nav-icon-set li:nth-child(3)">
+            <span class="nav-icon"><img class="icon" src="images/icons/profile.svg"></span>
+            <span class="nav-icon-label">Profile</span>
+         </a></li>
+      </ul>
+   </script>
    
 </body>
 </html>
