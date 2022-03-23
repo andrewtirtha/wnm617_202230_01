@@ -104,7 +104,7 @@
       <footer data-role="footer" data-template="#footer-template"></footer>
 
       <div class="modal" id="map-drawer">
-         <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
+         <div class="modal-back" data-deactivate="#map-drawer"></div>
          <div class="modal-drawer top">
             <div class="modal-head display-flex">
                <div class="flex-none">Course Info</div>
@@ -344,9 +344,6 @@
       <header data-role="header">
          <h1>User Profile</h1>
          <ul>
-         <li>
-            <a href="#" data-rel="back">Back</a>
-         </li>
          <li class="flex-stretch"></li>
          <li>
             <a href="#user-edit-page" data-role="none">
@@ -463,6 +460,7 @@
             <div class="text-center">
             <img src="images/icons/camera.svg" alt="upload-icon" class="upload-icon" data-activate="#upload-course-modal">
         </div>
+
             <div class="modal" id="upload-course-modal">
                 <div class="modal-back" data-deactivate="#upload-course-modal">  
                 </div>
@@ -471,7 +469,7 @@
                
                   </div>
                    <div class="modal-body">
-                     <h4 class="modal-head-text">Please upload a new image</h4>
+                     <h4 class="modal-head-text">Please upload a new image </h4>
                     <div class="upload">
                      <input type="file" name="filename">
                      <br>
@@ -479,7 +477,8 @@
                     </div>
                   </div>
                </div>
-         </div>
+            </div>
+
          <form class="course-form" id="course-edit-form" >
          <div class="form-control"> 
                 <label for="edit-course-name" class="form-label">Name</label>

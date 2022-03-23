@@ -37,7 +37,13 @@ h1 {
    font-size: 200%;
    font-family: var(--font-serif);
 }
-h2,
+h2 {
+   font-size: 1em;
+   font-family: var(--font-sans);
+   margin-left: 1em;
+}
+
+
 h3,
 h4 {
    font-size: 1em;
@@ -399,7 +405,7 @@ margin-right: auto;
 .upload-icon {
 height: 240px;
 width:  -webkit-fill-available;
-object-fit: contain;
+object-fit: co;
 text-align: center;
 background: var(--color-neutral-dark);
 }
@@ -569,7 +575,7 @@ display: inline-block;
    color: white;
    text-align: center;
    font-weight: 600;
-   margin-left: 110px;
+   margin-left: 160px;
 }
 
 
