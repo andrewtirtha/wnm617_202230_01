@@ -5,6 +5,27 @@ $(() => {
    // EVENT DELEGATION
    $(document)
 
+   .on("pagecontainerbeforeshow", function(event, ui){
+         console.log(ui.toPage[0].id)
+
+         //PAGE ROUTING
+         switch(ui.toPage[0].id) {
+            case "recent-page":RecentPage(); break;
+            case "list-page":ListPage(); break;
+            case "user-profile-page":UserProfilePage(); break;
+            case "user-profile-page":ProfileEditPage(); break;
+            case "course-profile-page":CourseProfilePage(); break;
+            case "course-edit-page":CourseEditPage(); break;
+
+         } 
+   })
+
+      
+
+
+
+
+
    // FORM SUBMISSIONS
    .on("submit", "#signin-form", function(e) {
       e.preventDefault();
@@ -17,6 +38,22 @@ $(() => {
       sessionStorage.removeItem("userId");
       checkUserId();
    })
+
+    .on("click", ".js-course-jump", function() {
+      try {
+      sessionStorage.courseId = $(this).data('id');
+   } catch(e) {
+         throw("No id detected")
+      }
+   })
+     .on("click", ".js-round-jump", function() {
+      try {
+      sessionStorage.roundId = $(this).data('id');
+   } catch(e) {
+         throw("No id detected")
+      }
+   })
+
 
 
    // ACTIVATE TOOLS

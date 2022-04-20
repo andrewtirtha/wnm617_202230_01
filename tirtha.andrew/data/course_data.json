@@ -1,0 +1,202 @@
+  [
+  {
+    "id": 1,
+    "user_id": 4,
+    "name": "Southview Golf Course",
+    "type": "parkland",
+    "lat": 37.537953,
+    "lng": -121.902,
+    "description": "Nulla aliqua in ea magna velit. Excepteur sunt dolore minim laboris occaecat fugiat nulla mollit deserunt ad labore. Laboris amet elit velit esse.",
+    "img": "https:/via.placeholder.com/400/911/fff/?text=undefined"
+  },
+  {
+    "id": 2,
+    "user_id": 3,
+    "name": "Welch Golf Course",
+    "type": "links",
+    "lat": 37.419702,
+    "lng": -122.084,
+    "description": "Nulla proident non ea et. Irure incididunt enim veniam enim aute ad occaecat in duis reprehenderit. Consequat sit reprehenderit commodo mollit dolor et aliqua ipsum voluptate ipsum dolore commodo.",
+    "img": "https:/via.placeholder.com/400/821/fff/?text=undefined"
+  },
+  {
+    "id": 3,
+    "user_id": 1,
+    "name": "Clarktown Golf Course",
+    "type": "municipal",
+    "lat": 37.36308,
+    "lng": -122.16,
+    "description": "Irure exercitation culpa incididunt consequat adipisicing deserunt adipisicing voluptate minim. Et fugiat in Lorem amet pariatur ex eiusmod labore sint consequat. Officia aute minim aliquip occaecat eu proident nisi in aliquip nostrud ipsum in ullamco.",
+    "img": "https:/via.placeholder.com/400/931/fff/?text=undefined"
+  },
+  {
+    "id": 4,
+    "user_id": 9,
+    "name": "Sterling Golf Club",
+    "type": "links",
+    "lat": 37.382503,
+    "lng": -122.333,
+    "description": "Quis mollit fugiat eiusmod Lorem eiusmod aliqua minim ullamco ad eu. Laboris quis exercitation cupidatat elit. Labore veniam laborum eu aute velit consectetur enim consequat excepteur deserunt reprehenderit culpa in esse.",
+    "img": "https:/via.placeholder.com/400/998/fff/?text=undefined"
+  },
+  {
+    "id": 5,
+    "user_id": 8,
+    "name": "Benson Golf Course",
+    "type": "municipal",
+    "lat": 37.443185,
+    "lng": -122.228,
+    "description": "Consectetur labore magna est proident. Excepteur dolor officia consequat cillum do esse ea nostrud aute. Sunt sint nostrud enim eu dolor fugiat reprehenderit aliquip.",
+    "img": "https:/via.placeholder.com/400/810/fff/?text=undefined"
+  },
+  {
+    "id": 6,
+    "user_id": 3,
+    "name": "Highland Golf Links",
+    "type": "links",
+    "lat": 37.534976,
+    "lng": -122.261,
+    "description": "Minim proident cillum excepteur deserunt minim magna magna. Elit nisi anim amet tempor reprehenderit velit magna sunt consequat. Excepteur ipsum ullamco commodo culpa elit quis.",
+    "img": "https:/via.placeholder.com/400/752/fff/?text=undefined"
+  },
+  {
+    "id": 7,
+    "user_id": 6,
+    "name": "Bradenville Golf Course",
+    "type": "links",
+    "lat": 37.723458,
+    "lng": -122.433,
+    "description": "Mollit anim officia ex commodo aute et incididunt et cupidatat ipsum reprehenderit nulla elit. Fugiat enim officia mollit eiusmod sunt ipsum anim irure qui aliquip in velit cillum. Commodo eiusmod id esse pariatur do qui sint laboris occaecat veniam.",
+    "img": "https:/via.placeholder.com/400/740/fff/?text=undefined"
+  },
+  {
+    "id": 8,
+    "user_id": 8,
+    "name": "Cedarville Golf Links",
+    "type": "links",
+    "lat": 37.220437,
+    "lng": -122.24,
+    "description": "Qui nulla proident enim in mollit quis nostrud ut proident veniam mollit consectetur sunt. Irure nostrud sit minim minim Lorem ex exercitation cillum pariatur anim aute adipisicing tempor. Officia do quis sunt nisi aliqua proident ad nostrud anim dolor magna officia nisi.",
+    "img": "https:/via.placeholder.com/400/738/fff/?text=undefined"
+  },
+  {
+    "id": 9,
+    "user_id": 5,
+    "name": "Statenville Golf Course",
+    "type": "links",
+    "lat": 37.474099,
+    "lng": -121.89,
+    "description": "Ipsum ut do culpa proident non deserunt cillum nostrud dolore magna in. Ipsum fugiat tempor esse consectetur nostrud sit minim consequat pariatur adipisicing esse culpa. Incididunt est ea esse culpa proident consequat veniam labore ex.",
+    "img": "https:/via.placeholder.com/400/813/fff/?text=undefined"
+  },
+  {
+    "id": 10,
+    "user_id": 5,
+    "name": "Worton Golf Club",
+    "type": "links",
+    "lat": 37.594281,
+    "lng": -122.26,
+    "description": "Eiusmod ipsum proident consectetur esse veniam. Officia labore esse laborum aute eiusmod fugiat ex adipisicing excepteur sint ea ullamco non. Laborum nulla irure mollit labore deserunt irure.",
+    "img": "https:/via.placeholder.com/400/831/fff/?text=undefined"
+  },
+  {
+    "id": 11,
+    "user_id": 10,
+    "name": "Devon Golf Course",
+    "type": "municipal",
+    "lat": 37.51039,
+    "lng": -122.164,
+    "description": "Sunt eiusmod officia laboris dolore. Elit laborum laboris id et ex enim ullamco fugiat id non ea. Nostrud sunt aliqua aliqua minim deserunt ipsum magna cupidatat id.",
+    "img": "https:/via.placeholder.com/400/993/fff/?text=undefined"
+  },
+  {
+    "id": 12,
+    "user_id": 10,
+    "name": "Newkirk Golf Course",
+    "type": "municipal",
+    "lat": 37.331825,
+    "lng": -121.975,
+    "description": "Mollit quis adipisicing pariatur amet elit sit dolor eiusmod aute culpa ex elit excepteur. Est pariatur nostrud eiusmod tempor laboris ipsum voluptate aliquip incididunt pariatur. Proident sint tempor magna veniam ut anim eu dolor irure reprehenderit deserunt laborum anim.",
+    "img": "https:/via.placeholder.com/400/730/fff/?text=undefined"
+  },
+  {
+    "id": 13,
+    "user_id": 4,
+    "name": "Calverton Golf Links",
+    "type": "links",
+    "lat": 37.291362,
+    "lng": -122.324,
+    "description": "Consectetur eiusmod duis aute pariatur voluptate qui ipsum anim velit. Laborum esse tempor ipsum voluptate ipsum fugiat culpa. Sit do pariatur est voluptate pariatur deserunt esse enim proident fugiat dolor.",
+    "img": "https:/via.placeholder.com/400/770/fff/?text=undefined"
+  },
+  {
+    "id": 14,
+    "user_id": 1,
+    "name": "Fairhaven Golf Club",
+    "type": "parkland",
+    "lat": 37.689069,
+    "lng": -122.353,
+    "description": "Nulla Lorem officia reprehenderit proident. In elit nisi amet eiusmod non laboris dolore ex do anim. Fugiat laborum adipisicing enim do laborum nisi sit veniam magna voluptate ut ea tempor velit.",
+    "img": "https:/via.placeholder.com/400/970/fff/?text=undefined"
+  },
+  {
+    "id": 15,
+    "user_id": 8,
+    "name": "Sylvanite Golf Course",
+    "type": "links",
+    "lat": 37.760939,
+    "lng": -121.848,
+    "description": "Ex nulla consectetur consequat est veniam id esse cillum dolor aliqua tempor laboris culpa. Ipsum sit culpa elit laboris. Cillum sint voluptate eu tempor ea reprehenderit ad fugiat ex ullamco ea reprehenderit reprehenderit adipisicing.",
+    "img": "https:/via.placeholder.com/400/772/fff/?text=undefined"
+  },
+  {
+    "id": 16,
+    "user_id": 5,
+    "name": "Centerville Golf Links",
+    "type": "links",
+    "lat": 37.64375,
+    "lng": -121.866,
+    "description": "Voluptate deserunt ullamco laborum nulla eu duis ipsum voluptate pariatur ex commodo nostrud ad ullamco. Exercitation sint consectetur eiusmod do dolore. Tempor fugiat veniam eiusmod amet mollit dolore proident proident voluptate nostrud commodo consequat.",
+    "img": "https:/via.placeholder.com/400/989/fff/?text=undefined"
+  },
+  {
+    "id": 17,
+    "user_id": 1,
+    "name": "Interlochen Golf Course",
+    "type": "parkland",
+    "lat": 37.212689,
+    "lng": -122.3,
+    "description": "Ea irure eiusmod quis deserunt minim est eu deserunt adipisicing. Sint quis ullamco quis laborum consectetur commodo in eu labore enim mollit do sint laborum. Non nulla velit ipsum sit officia.",
+    "img": "https:/via.placeholder.com/400/876/fff/?text=undefined"
+  },
+  {
+    "id": 18,
+    "user_id": 7,
+    "name": "Blackgum Golf Club",
+    "type": "parkland",
+    "lat": 37.397181,
+    "lng": -122.007,
+    "description": "Qui culpa est fugiat in qui non sint aliquip sunt dolor reprehenderit proident deserunt exercitation. In mollit minim cillum consectetur eiusmod nisi irure sit fugiat adipisicing nostrud id pariatur. Non deserunt deserunt aute exercitation adipisicing nisi proident quis nisi ea duis dolore.",
+    "img": "https:/via.placeholder.com/400/944/fff/?text=undefined"
+  },
+  {
+    "id": 19,
+    "user_id": 7,
+    "name": "Virgie Golf Course",
+    "type": "links",
+    "lat": 37.597386,
+    "lng": -122.183,
+    "description": "Ipsum ex cillum minim cupidatat ad laboris nostrud culpa esse culpa non. Nisi et quis id minim reprehenderit nisi. In commodo sit laborum sint occaecat aliquip in.",
+    "img": "https:/via.placeholder.com/400/734/fff/?text=undefined"
+  },
+  {
+    "id": 20,
+    "user_id": 3,
+    "name": "Bowden Golf Links",
+    "type": "parkland",
+    "lat": 37.691807,
+    "lng": -122.18,
+    "description": "Consequat laborum ex eu minim eu consectetur aliquip mollit Lorem eiusmod cupidatat irure aliquip in. Deserunt laborum adipisicing adipisicing elit Lorem Lorem reprehenderit elit reprehenderit id cillum excepteur laboris Lorem. Et cillum eu amet voluptate velit ipsum deserunt pariatur.",
+    "img": "https:/via.placeholder.com/400/916/fff/?text=undefined"
+  }
+]

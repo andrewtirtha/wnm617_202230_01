@@ -11,9 +11,14 @@
    <link rel="stylesheet" href="css/app.css">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
-   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+   
    <script src="js/app.js"></script>
    <script src="js/signin.js"></script>
+   <script src="js/functions.js"></script>
+   <script src="js/pages.js"></script>
+   <script src="js/parts.js"></script>
+
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,97 +141,16 @@
    <section data-role="page" id="list-page">
       <header data-role="header">
       <h1 class="ui-title" role="heading" aria-level="1">Course List</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#addnew-page" >Add New</a></li>
-         </ul>
       </header>
       <div data-role="main">
          <!-- ul>li*10>a[href=#course-profile-page]>{Course $} -->
          <ul class="course-list">
-            <li class="course-list-item">
-               <a href="#course-profile-page">
-                  <div class="course-list-image"><img src="images/moffett.jpeg" alt=""></div>
-                  <div class="course-list-body">
-                     <div class="course-list-name">Moffett Field Golf Course</div>
-                     <div class="course-list-type">Municipial</div>
-                     <div class="course-list-location">Mountain View, CA</div>
-                  </div>
-               </a>
-            </li>
-            <li class="course-list-item">
-               <a href="#course-profile-page">
-                  <div class="course-list-image"><img src="images/crystalsprings.jpeg" alt=""></div>
-                  <div class="course-list-body">
-                     <div class="course-list-name">Crystal Springs Golf Course</div>
-                     <div class="course-list-type">Parkland</div>
-                     <div class="course-list-location">Burlingame, CA</div>
-                  </div>
-               </a>
-            </li>
-            <li class="course-list-item">
-               <a href="#course-profile-page">
-                  <div class="course-list-image"><img src="images/halfmoonbay.jpeg" alt=""></div>
-                  <div class="course-list-body">
-                     <div class="course-list-name">Half Moon Bay Ocean Course</div>
-                     <div class="course-list-type">Links</div>
-                     <div class="course-list-location">Half Moon Bay, CA</div>
-                  </div>
-               </a>
-            </li>
-            <li class="course-list-item">
-               <a href="#course-profile-page">
-                  <div class="course-list-image"><img src="images/bodega.jpeg" alt=""></div>
-                  <div class="course-list-body">
-                     <div class="course-list-name">The Links at Bodega Harbour</div>
-                     <div class="course-list-type">Links</div>
-                     <div class="course-list-location">Bodega Bay, CA</div>
-                  </div>
-               </a>
-            </li>
-            <li class="course-list-item">
-               <a href="#course-profile-page">
-                  <div class="course-list-image"><img src="images/presidio.jpeg" alt=""></div>
-                  <div class="course-list-body">
-                     <div class="course-list-name">Presidio Golf Course</div>
-                     <div class="course-list-type">Parkland</div>
-                     <div class="course-list-location">San Francisco, CA</div>
-                  </div>
-               </a>
-            </li>
-             <li class="course-list-item">
-               <a href="#course-profile-page">
-                  <div class="course-list-image"><img src="images/sunnyvale.jpeg" alt=""></div>
-                  <div class="course-list-body">
-                     <div class="course-list-name">Sunnyvale Municipial</div>
-                     <div class="course-list-type">Municipial</div>
-                     <div class="course-list-location">Sunnyvale, CA</div>
-                  </div>
-               </a>
-            </li>
-             <li class="course-list-item">
-               <a href="#course-profile-page">
-                  <div class="course-list-image"><img src="images/tpcharding.jpeg" alt=""></div>
-                  <div class="course-list-body">
-                     <div class="course-list-name">TPC Harding Park</div>
-                     <div class="course-list-type">Parkland</div>
-                     <div class="course-list-location">San Francisco, CA</div>
-                  </div>
-               </a>
-            </li>
-            <li class="course-list-item">
-               <a href="#course-profile-page">
-                  <div class="course-list-image"><img src="images/stonetree.jpeg" alt=""></div>
-                  <div class="course-list-body">
-                     <div class="course-list-name">Stone Tree Golf</div>
-                     <div class="course-list-type">Links</div>
-                     <div class="course-list-location">Novato, CA</div>
-                  </div>
-               </a>
-            </li>
+            
           
          </ul>
-         <div class="floater bottom right circle-button" data-activate="#list-add-course-modal">&plus;</div>
+         <div class="floater bottom right circle-button">
+            <a href="#addnew-page">&plus;</a>
+         </div>
       </div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
@@ -236,7 +160,7 @@
 
    <section data-role="page" id="course-profile-page">
       <header data-role="header">
-         <h1>Course Profile</h1>
+         <h1></h1>
          <ul>
          <li>
             <a href="#" data-rel="back">Back</a>
@@ -250,28 +174,45 @@
          </ul>
       </header>
 
-      <div data-role="main">
-         <div data-role="main" class="overscroll">
-            <div class="text-center">
-                <img src="images/moffett.jpeg" alt="" class="profile-image">
+       <div data-role="main" class="overscroll">
+         <div class="course-profile-top">
+         </div>
+         <div class="course-profile-description">
+         </div>
+         <div class="course-profile-rounds">   
+         </div>
+
+        
+      </div>
+
+      <!--view round modal-->
+       <div class="modal" id="list-view-round-modal">
+         <div class="modal-back" data-deactivate="#list-add-round-modal"></div>
+         <div class="modal-popup">
+            <div class="modal-head">
+               <h5>View Round</h5>
             </div>
-        </div>
-        <form class="course-form" id="course-profile-page" >
-         <p class="course-profile-title">Name</p>
-         <p class="course-profile-info">Moffett Field Golf Course</p>
-
-         <p class="course-profile-title">Type</p>
-         <p class="course-profile-info">Municipial</p>
-         
-         <p class="course-profile-title">Location</p>
-         <p class="course-profile-info">Mountain View, CA</p>
-
-         <p class="course-profile-title">Description</p>
-         <p class="course-profile-info">The Golf Club at Moffett Field features a 18-hole golf course and is located near Mountain View, California. The course measures 6,517 yards from the back tees and plays to a par of 72. The course rating is 71.0 and Moffett Field has a slope rating of 126 on the kikuyu grass fairways. Moffett Field Golf Course opened in 1959 and is managed by OB Sports Golf Management.</p>
             
-         </form>
-        </div>
-         
+            <div class="modal-foot" style="text-align:right" data-deactivate="#list-view-round-modal">
+               Close
+            </div>
+         </div>
+      </div>
+   </section>
+
+      <!--add new round modal-->
+
+      <div class="modal" id="addnew-round-modal">
+         <div class="modal-back" data-deactivate="#list-add-round-modal"></div>
+         <div class="modal-popup">
+            <div class="modal-head">
+               <h5>Add Round</h5>
+            </div>
+            
+            <div class="modal-foot" style="text-align:right" data-deactivate="#addnew-round-modal">
+               Submit
+            </div>
+         </div>
       </div>
    </section>
 
@@ -358,29 +299,7 @@
       </header>
 
       <div data-role="main">
-         <div data-role="main" class="overscroll">
-            <br>
-            <div class="text-center">
-                <img src="images/profile.png" alt="" class="user-profile-image">
-            </div>
-        </div>
-        <form class="user-form" id="user-profile-page" >
-         <p class="user-profile-title">Name</p>
-         <p class="user-profile-info">Andrew Tirtha</p>
-
-         <p class="user-profile-title">Age</p>
-         <p class="user-profile-info">25</p>
-         
-         <p class="user-profile-title">Handicap</p>
-         <p class="user-profile-info">25</p>
-         <br>
-         <br>
-         <br>
-         <div class="hotdog color">
-         <a href="#" class="js-logout">Logout</a>
          </div>
-      </form>
-      </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 

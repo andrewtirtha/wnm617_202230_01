@@ -49,6 +49,19 @@ h4 {
    font-size: 1em;
    font-family: var(--font-sans);
 }
+h5 {
+   font-size: 1.5em;
+   font-family: var(--font-serif);
+   margin: 0em;
+   padding: 1em;
+}
+h6 {
+   font-size: 1em;
+   font-family: var(--font-sans)
+   font-weight: bold;
+   margin: 0em;
+   padding: 1em;
+}
 
 div {
    font-family: var(--font-sans);
@@ -92,6 +105,10 @@ a:hover {
 
 
 /* Forms */
+
+.text-center {
+   text-align: center;
+}
 
 .form {
    padding: 1.5em;
@@ -156,6 +173,10 @@ a:hover {
 .hotdog.color {
    background-color: var(--color-main-light);
    color: white;
+}
+
+.ui-link {
+   margin-left: 0px;
 }
 
 
@@ -476,8 +497,11 @@ background: var(--color-neutral-dark);
 
 /* Course Profile Page */
 
-.text-center {
-   text-align: center;
+.course-profile-top {
+   height: 35vh;
+   background-size: cover;
+   background-position: center;
+
 }
 
 .course-form {
@@ -501,6 +525,44 @@ background: var(--color-neutral-dark);
    object-fit: cover;
    text-align: center;
 }
+
+.round-form {
+   padding-top: 0em;
+   padding-right: 1.5em;
+   padding-left: 1.5em;
+   padding-bottom: 1.5em;
+}
+.round-list {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   padding: 0 1em;
+   height: 100%;
+   width: 100%;
+   position: relative;
+   overflow: auto;
+}
+
+.round-list-item a {
+   display: flex;
+   font-weight: normal;
+   margin: 1em 0;
+   border-radius: 0.5em;
+   overflow: hidden;
+   box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+}
+.round-list-item a:hover {
+   text-decoration: none;
+}
+
+.round-list-body {
+   padding: 1em;
+}
+
+.add-round {
+   margin-left: 160px;
+}
+
 
 /* Edit Course Profile Page */
 
@@ -620,6 +682,25 @@ display: inline-block;
   background-color: var(--color-neutral-lighter);
 }
 
+/* floater */
+
+.floater { position: absolute; }
+.floater.top { top:1rem }
+.floater.right { right:1rem }
+.floater.bottom { bottom:1rem }
+.floater.left { left:1rem }
+
+
+.circle-button {
+   border-radius: 2rem;
+   line-height: 3rem;
+   font-size: 2.5em;
+   width: 3rem;
+   height: 3rem;
+   text-align: center;
+   background-color: white;
+   box-shadow: 0.1em 0.2em 0.4em rgba(0,0,0,0.2);
+}
 
 /* Layout Classes */
 
