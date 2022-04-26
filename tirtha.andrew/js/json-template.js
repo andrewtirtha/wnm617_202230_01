@@ -52,10 +52,10 @@
 //course template
 
 [
-  '{{repeat(20)}}',
+  '{{repeat(50)}}',
   {
     id: '{{index(1)}}',
-    course_id: '{{integer(1,50)}}',
+    user_id: '{{integer(1,10)}}',
     
     name:'{{city()}}' + '{{random(" Golf Course", " Golf Club", " Golf Links")}}',
     
@@ -64,7 +64,7 @@
     lat: '{{floating(37.780554, 37.212407)}}',
     lng: '{{floating(-122.49100, -121.793159)}}',
   
-  description: '{{lorem(3, "sentences")}}',
+    description: '{{lorem(3, "sentences")}}',
   
   img: function(tags) {
       return 'https:/via.placeholder.com/400/' +
@@ -80,10 +80,10 @@
     {
       id: '{{index(1)}}',
       course_id: '{{integer(1,50)}}',
-      round_name:'{{city()}}' + '{{random(" Golf Course, ", " Golf Club, ", " Golf Links, ")}}' + '{{integer(1,20)}}',
       played: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-dd")}}',
       score: '{{integer(62, 120)}}',
       tee: '{{random("red","white","blue","black")}}'
+      description: '{{lorem(3, "sentences")}}',
     }
 ]
 

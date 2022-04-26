@@ -1,13 +1,13 @@
 CREATE TABLE IF NOT EXISTS `rounds` (
 `id` INT NULL,
 `course_id` INT NULL,
-`played` VARCHAR(MAX) NULL,
+`date_played` VARCHAR(MAX) NULL,
 `score` INT NULL,
 `tee` VARCHAR(MAX) NULL,
 `description` VARCHAR(MAX) NULL
 );
 
-INSERT INTO rounds VALUES
+INSERT INTO golflog_rounds VALUES
 (1,38,'2021-10-10',96,'white','Incididunt consectetur nostrud dolore irure magna. Aute dolore Lorem qui incididunt culpa do. Est laboris ad labore fugiat ex consequat excepteur minim sint enim.'),
 (2,8,'2014-09-19',70,'white','Aute velit dolore ea laborum cillum sit elit irure aliquip sunt laboris. Dolor sit ea cupidatat nostrud quis laboris Lorem dolor deserunt velit. Commodo proident dolore exercitation excepteur exercitation anim magna nulla aute culpa.'),
 (3,45,'2014-03-16',72,'red','Id ad cupidatat id dolor ipsum dolor commodo Lorem voluptate amet commodo. Incididunt dolore voluptate aute Lorem labore. Voluptate esse velit aute amet ad excepteur.'),

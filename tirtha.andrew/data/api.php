@@ -60,7 +60,7 @@ function makeStatement($data) {
 
 
 		case "user_by_id":
-			return makeQuery($c, "SELECT  * FROM `golflog_users` WHERE `id` = ?", $p);
+			return makeQuery($c, "SELECT  `id`,`name`,`img`,`email`,`username`, `handicap`, FROM `golflog_users` WHERE `id` = ?", $p);
 		case "course_by_id":
 			return makeQuery($c, "SELECT * FROM `golflog_courses` WHERE `id` = ?", $p);
 		case "round_by_id":
@@ -74,6 +74,24 @@ function makeStatement($data) {
 
 
 
+      case "recent_course_locations":
+         return makeQuery($c,"SELECT *
+            FROM `golflog_courses` a
+            JOIN (
+               SELECT lg.*
+               FROM `golflog_rounds` lg
+               WHERE lg.id = (
+                  SELECT lt.id
+                  FROM `golflog_rounds` lt
+                  WHERE lt.course_id = lg.course_id
+                  ORDER BY lt.date_played DESC
+                  LIMIT 1
+               )
+            ) l
+            ON a.id = l.course_id
+            WHERE a.user_id = ?
+            ORDER BY l.course_id, l.date_played DESC
+         ", $p);
 
 		case "check_signin":
 			return makeQuery($c, "SELECT id from `golflog_users` WHERE `username` = ? AND `password` = md5(?)", $p);

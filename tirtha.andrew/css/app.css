@@ -195,6 +195,7 @@ a:hover {
 .recent-search {
    margin: 1em;
    display: flex;
+   position: relative;
 }
 
 
@@ -453,6 +454,15 @@ background: var(--color-neutral-dark);
 
 
 
+/* Map */
+
+.map {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+}
+
+
 /* Course List */
 .course-list {
    list-style-type: none;
@@ -524,6 +534,12 @@ background: var(--color-neutral-dark);
    width:  -webkit-fill-available;
    object-fit: cover;
    text-align: center;
+}
+
+.course-profile-round-title {
+   font: var(--font-serif);
+   font-weight: bold;
+   font-size: 1em;
 }
 
 .round-form {

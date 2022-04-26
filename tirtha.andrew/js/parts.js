@@ -45,7 +45,7 @@ const makeUserProfilePage = o => `
 
 
 const makeCourseProfileDescription = o => `
-<form class="course-form" id="course-profile" >
+<form class="course-form" id="course-profile">
          <p class="course-profile-title">Type</p>
          <p class="course-profile-info">${o.type}</p>
          
@@ -57,37 +57,16 @@ const makeCourseProfileDescription = o => `
 `;
 
 const makeCourseProfileRounds  = o => `
-		<form class="round-form" id="course-round">
-         <h5>Rounds</h5>
-           <ul class="round-list">
-
-            <li class="round-list-item">
-                  <a data-activate="#list-view-round-modal">
-                     <div class="round-list-body" >
-                        <h6 class="course-round-date">March 20, 2022</h6>
-                     </div>
-                  </a>
-            </li>
-            <li class="round-list-item">
-               <a data-activate="#list-view-round-modal">
-                     <div class="round-list-body">
-                         <h6 class="course-round-date">February 24, 2022</h6>
-                     </div>
-               </a>
-            </li>
-            <li class="round-list-item">
-               <a data-activate="#list-view-round-modal">
-                     <div class="round-list-body">
-                        <h6 class="course-round-date">December 14, 2021</h6>
-                     </div>
-               </a>
-            </li>
-          </ul>
-            <br>
-            <div class="hotdog color">
-               <a data-activate="#addnew-round-modal">Add New Round</a>
-            </div>
-            </form>  
+<h5>Rounds</h5>
+	<form class="course-form" id="course-profile-round">
+           <p class="course-profile-rounds">${o.id}</p>
+           <p class="course-profile-round-title">Date Played</p>
+           <p class="course-profile-rounds">${o.date_played}</p>
+           <p class="course-profile-round-title">Score</p>
+           <p class="course-profile-rounds">${o.score}</p>
+           <p class="course-profile-round-title">Tee</p>
+           <p class="course-profile-rounds">${o.tee}</p>
+    </form>
 `
 
 

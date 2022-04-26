@@ -1,11 +1,21 @@
 
 const RecentPage = async() => {
-	query({
-		type:'check_signin',
-		params:["user2","pass"]
-	}).then(d=>{
-		console.log(d)
-	})
+
+
+   let {result} = await query({
+      type:'recent_course_locations',
+      params:[sessionStorage.userId]
+   });
+   console.log(result);
+
+   let valid_courses = result.reduce((r,o)=>{
+      o.icon = o.img;
+      if(o.lat && o.lng) r.push(o);
+      return r;
+   },[]);
+
+   let map_el = await makeMap("#recent-page .map");
+   makeMarkers(map_el,valid_courses)
 }
 
 
@@ -29,8 +39,11 @@ const UserProfilePage = async() => {
 
    console.log(user)
 
+   
+
    $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
 }
+
 
 
 const CourseProfilePage = async() => {
@@ -43,20 +56,14 @@ const CourseProfilePage = async() => {
  $(".course-profile-top").css({"background-image":`url(${course.img})`})
  $("#course-profile-page h1").html(course.name)
  $(".course-profile-description").html(makeCourseProfileDescription(course));
- $(".course-profile-rounds").html(makeCourseProfileRounds(course));
+
+
+  let {result:rounds} = await query({
+      type:'rounds_by_course_id',
+      params:[sessionStorage.courseId]
+   })
+   console.log(rounds)
+    $(".course-profile-rounds").html(makeCourseProfileRounds(rounds));
+
 }
-
-
-
-  
-
-   // let {result:locations} = await query({
-    //  type:'locations_by_animal_id',
-   //   params:[sessionStorage.animalId]
-  // })
-  // console.log(locations)
-
-
-
-
 

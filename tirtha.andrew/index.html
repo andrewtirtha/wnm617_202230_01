@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +19,14 @@
    <script src="js/functions.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
+   <script src="js/maps.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC46OrLyoGQKQIoc2xHG7pthvz2Dh1Z7ik"
+      defer
+    ></script>
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,7 +105,9 @@
          <h1 class="ui-title" role="heading" aria-level="1">Map View</h1>
 
       </header>
-      <div class="recent-search">
+      <div data-role="main">
+         <div class="map"></div>
+         <div class="recent-search">
             <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
                <input type="search" data-role="none" placeholder="Search">
             </form>
@@ -105,13 +115,11 @@
                <img src="images/icons/filter.svg" style="vertical-align: middle;" alt="" class="icon">
             </div>
          </div>
-      <div data-role="main" class="map-placeholder">
-         <div class="marker" style="position:absolute;top:69vh;left:45vw;" data-activate="#map-drawer">
-            <img src="images/pin.png" alt="" class="icon">
-         </div>
+         
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
 
+<!--
       <div class="modal" id="map-drawer">
          <div class="modal-back" data-deactivate="#map-drawer"></div>
          <div class="modal-drawer top">
@@ -133,6 +141,7 @@
             </div>
          </div>
       </div>
+   -->
    </section>
 
  <!-- list page -->
@@ -158,6 +167,8 @@
 
 <!-- course profile -->
 
+
+
    <section data-role="page" id="course-profile-page">
       <header data-role="header">
          <h1></h1>
@@ -181,6 +192,8 @@
          </div>
          <div class="course-profile-rounds">   
          </div>
+
+         
 
         
       </div>
