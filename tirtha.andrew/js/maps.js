@@ -8,7 +8,9 @@ const makeMap = async (target, center={ lat: 37.707622, lng: -122.417084 }) => {
          center,
          zoom: 12,
          disableDefaultUI: true,
-      })
+         styles: mapstyles,
+      }),
+      "infoWindow": new google.maps.InfoWindow({content:''}),
    });
 
    return map_el;
@@ -39,4 +41,111 @@ const makeMarkers = (map_el, map_locs=[]) => {
    });
 
    map_el.data({markers});
+   setTimeout(()=>{ setMapBounds(map_el,map_locs); }, 150);
 }
+
+
+const setMapBounds = (map_el,map_locs) => {
+   let {map} = map_el.data();
+
+   if(map_locs.length === 1) {
+      map.setCenter(map_locs[0]);
+      map.setZoom(14);
+   } else if(map_locs.length === 0) {
+
+   } else {
+      let bounds = new google.maps.LatLngBounds(null);
+      map_locs.forEach(l => {
+         bounds.extend(l);
+      });
+      map.fitBounds(bounds);
+   }
+}
+
+
+
+
+const mapstyles = [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#46bcec"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+]
+
+
+
+

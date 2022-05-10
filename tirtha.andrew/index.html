@@ -20,6 +20,7 @@
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/maps.js"></script>
+   <script src="js/forms.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -70,12 +71,12 @@
          <div class="flex-stretch"></div>
          <form id="signup-form" class="form" data-ajax="false">
             <div class="form-control">
-               <label for="signup-email" class="form-label">Email</label>
-               <input type="text" id="signup-email" data-role="none" class="form-input" placeholder="Type your Email">
-            </div>
-            <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
                <input type="text" id="signup-username" data-role="none" class="form-input" placeholder="Type your Username">
+            </div>
+            <div class="form-control">
+               <label for="signup-email" class="form-label">Email</label>
+               <input type="text" id="signup-email" data-role="none" class="form-input" placeholder="Type your Email">
             </div>
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
@@ -87,8 +88,8 @@
             </div>
             <!-- <input type="submit" data-role="none"> -->
             <div class="form-control">
-               <!-- <button type="button" class="form-button">Submit</button> -->
-               <a href="#recent-page" class="form-button">Sign Up</a>
+               <button type="submit" class="form-button">Sign Up</button>
+               <!-- <a href="#recent-page" class="form-button">Sign Up</a> -->
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em;">
                <p>Already have an account? <a href="#signin-page">Sign In!</a></p>
@@ -97,6 +98,7 @@
          <div class="flex-stretch"></div>
       </div>
    </section>
+
 
  <!-- recent page -->
 
@@ -144,6 +146,10 @@
    -->
    </section>
 
+
+
+
+
  <!-- list page -->
 
 
@@ -158,12 +164,20 @@
           
          </ul>
          <div class="floater bottom right circle-button">
-            <a href="#addnew-page">&plus;</a>
+            <a href="#course-add-page">&plus;</a>
          </div>
       </div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
+
+
+
+
+
+
+
+
 
 <!-- course profile -->
 
@@ -191,12 +205,14 @@
          <div class="course-profile-description">
          </div>
          <div class="course-profile-rounds">   
-         </div>
-
-         
-
-        
+         </div>   
       </div>
+
+      <div class="floater bottom right circle-button">
+            <a href="#addnew-round-modal">&plus;</a>
+      </div>
+
+
 
       <!--view round modal-->
        <div class="modal" id="list-view-round-modal">
@@ -229,6 +245,11 @@
       </div>
    </section>
 
+
+
+
+   
+
 <!-- edit course profile -->
 
 <section data-role="page" id="course-edit-page">
@@ -243,18 +264,10 @@
       </header>
 
       <div data-role="main">
-         <div data-role="main" class="overscroll">
-            <div class="text-center">
-                <img src="images/moffett.jpeg" alt="" class="profile-image">
-                <a href="#" class="change-photo-text" data-activate="#photo-upload-modal">Upload New Photo</a>
-            </div>
-        </div>
-
-
-
-        <div class="modal" id="photo-upload-modal">
-                <div class="modal-back" data-deactivate="#photo-upload-modal"></div>
-         <div class="modal-drawer top">
+        <div class="modal" id="course-photo-upload-modal">
+                <div class="modal-back" data-deactivate="#course-photo-upload-modal">  
+                </div>
+            <div class="modal-drawer top">
             <div class="modal-head display-flex">
                
             </div>
@@ -268,29 +281,8 @@
                </div>
             </div>
          </div>
-
-      <form class="course-form" id="course-edit-form" >
-         <div class="form-control"> 
-                <label for="edit-course-name" class="form-label">Name</label>
-                <input type="text" id="edit-course-name" data-role="none" class="form-input"
-                placeholder="Course 1">
-            </div>
-            <div class="form-control">
-                <label for="edit-type-selection" class="form-label">Type</label>
-               <select data-role="none" name="select" id="edit-type-selection" class="selection-edit">
-                   <option value="1">Links</option>
-                   <option value="2">Parkland</option>
-                   <option value="3">Municipial</option>
-               </select>
-            </div> 
-            <div class="form-control">
-                <label for="edit-course-info" class="form-label">Description</label>
-                <textarea name="edit-course-info" class="form-description" data-role="none" placeholder="This is golf course 1"></textarea>
-            </div> 
-            
-            <div class="form-control"> <a href="#course-profile-page" class="form-button">Save</a>
-            </div>
-       </form>
+         <form id="course-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
+         </form>
         </div>
          
     </div>
@@ -304,7 +296,7 @@
          <ul>
          <li class="flex-stretch"></li>
          <li>
-            <a href="#user-edit-page" data-role="none">
+            <a href="#user-settings-page" data-role="none">
                <img src="images/icons/edit.svg" class="edit-icon" alt="edit icon">
             </a>
          </li>
@@ -316,8 +308,52 @@
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 
+   <!-- user settings page -->
+
+    <section data-role="page" id="user-settings-page">
+      <header data-role="header">
+         <h1>User Settings</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+        <div class="user-form" id="user-settings-page">
+            <div class=" card user-settings">
+              <a class="buton" href="#user-edit-page">Edit User</a>
+            </div>
+            <div class="card user-settings">
+              <a class="button" href="#user-password-page">Edit Password</a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="hotdog color">
+            <a href="#" class="js-logout">Logout</a>
+            </div>
+
+        </div>
+      </div>
+   </section>
+
    <!-- user edit page -->
 
+   <section data-role="page" id="user-edit-page">
+      <header data-role="header">
+         <h1>Edit User</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-user-edit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
+         </form>
+      </div>
+   </section>
+<!--
    <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>Edit User</h1>
@@ -326,18 +362,11 @@
             <a href="#" data-rel="back">Back</a>
          </li>
          <li class="flex-stretch"></li>
+         <li><a href="#" class="js-submit-user-edit">Save</a></li>
       </ul>
       </header>
       <div data-role="main">
-         <div data-role="main" class="overscroll">
-            <div class="text-center">
-                <img src="images/profile.png" alt="" class="user-profile-image">
-                <br>
-                <a href="#" class="change-photo-text" data-activate="#user-photo-upload-modal">Upload New Photo</a>
-            </div>
-        </div>
-
-         <div class="modal" id="user-photo-upload-modal">
+           <div class="modal" id="user-photo-upload-modal">
                 <div class="modal-back" data-deactivate="#user-photo-upload-modal">  
                 </div>
             <div class="modal-drawer top">
@@ -355,32 +384,48 @@
             </div>
          </div>
 
-         <form class="user-form" id="user-edit-form">
-            <div class="form-control"> 
-                <label for="edit-user-name" class="form-label">Name</label>
-                <input type="text" id="edit-user-name" data-role="none" class="form-input"
-                placeholder="Tiger Woods">
-            </div>
-            <div class="form-control">
-                <label for="edit-user-age" class="form-label">Age</label>
-                <input type="text" id="edit-user-age" data-role="none" class="form-input"
-                placeholder="32">
-            </div> 
-            <div class="form-control">
-                <label for="edit-user-handicap" class="form-label">Handicap</label>
-                <input type="text" id="edit-user-handicap" data-role="none" class="form-input"
-                placeholder="25">
-             </div>
-            
-            <div class="form-control"> <a href="#user-profile-page" class="form-button">Save</a>
-            </div>
-          </form>
+         <div data-role="main" class="overscroll">
+            <form id="user-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
+            </form>
+        </div>
    </div>
    </section>
+-->
 
-   <!-- Add New -->
+<!-- edit password page -->
 
-   <section data-role="page" id="addnew-page">
+   <section data-role="page" id="user-password-page">
+      <header data-role="header">
+         <h1>Edit User Password</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-password-form" class="overscroll fill-parent display-flex flex-column" data-ajax="false" style="padding:1em">
+            <div>
+               <div class="form-control">
+                  <label for="user-password-new" class="form-label">New Password</label>
+                  <input class="form-input" type="password" id="user-password-new" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="user-password-repeat" class="form-label">Repeat Password</label>
+                  <input class="form-input" type="password" id="user-password-repeat" data-role="none">
+               </div>
+            </div>
+            <div class="flex-stretch"></div>
+            <div>
+               <button class="form-button" type="submit">Submit</button>
+            </div>
+         </form>
+      </div>
+   </section>
+
+
+
+   <!-- Add New course-->
+
+   <section data-role="page" id="course-add-page">
         <header data-role="header">
          <h1>Add New</h1>
          <ul>
@@ -388,6 +433,7 @@
             <a href="#" data-rel="back">Back</a>
          </li>
          <li class="flex-stretch"></li>
+         <li><a href="#" class="js-submit-course-add">Save</a></li>
       </ul>
       </header>
         
@@ -415,31 +461,10 @@
                </div>
             </div>
 
-         <form class="course-form" id="course-upload-form" >
-         <div class="form-control"> 
-                <label for="upload-upload-name" class="form-label">Name</label>
-                <input type="text" id="upload-course-name" data-role="none" class="form-input"
-                placeholder="Course 1">
-            </div>
-            <div class="form-control">
-                <label for="upload-type-selection" class="form-label">Type</label>
-               <select data-role="none" name="select" id="upload-type-selection" class="selection-edit">
-                   <option value="1">Links</option>
-                   <option value="2">Parkland</option>
-                   <option value="3">Municipial</option>
-               </select>
-            </div> 
-            <div class="form-control">
-                <label for="upload-course-info" class="form-label">Description</label>
-                <textarea name="upload-course-info" class="form-description" data-role="none" placeholder="This is golf course 1"></textarea>
-            </div> 
-            
-            <div class="form-control"> <a href="#course-profile-page" class="form-button">Save</a>
-            </div>
-         </form>
+      <div data-role="main">
+         <form id="course-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
       </div>
-         
-    </section>
+   </section>
 
 
 

@@ -13,9 +13,10 @@ $(() => {
             case "recent-page":RecentPage(); break;
             case "list-page":ListPage(); break;
             case "user-profile-page":UserProfilePage(); break;
-            case "user-profile-page":ProfileEditPage(); break;
+            case "user-edit-page":UserEditPage(); break;
             case "course-profile-page":CourseProfilePage(); break;
             case "course-edit-page":CourseEditPage(); break;
+            case "course-add-page":CourseAddPage(); break;
 
          } 
    })
@@ -31,7 +32,19 @@ $(() => {
       e.preventDefault();
       checkLoginForm();
    })
+  .on("submit", "#signup-form", function(e) {
+      e.preventDefault();
+      submitUserSignup();
+   })
 
+
+   // FORM SUBMISSION CLICKS
+   .on("click", ".js-submit-course-add", function() {
+      submitCourseAdd();
+   })
+   .on("click", ".js-submit-user-edit", function() {
+      submitUserEdit();
+   })
 
    // CLICKS
    .on("click", ".js-logout", function() {
@@ -39,20 +52,29 @@ $(() => {
       checkUserId();
    })
 
-    .on("click", ".js-course-jump", function() {
+    .on("click", ".js-course-jump", function(e) {
       try {
       sessionStorage.courseId = $(this).data('id');
+      $.mobile.navigate("#course-profile-page");
    } catch(e) {
          throw("No id detected")
       }
    })
-     .on("click", ".js-round-jump", function() {
-      try {
-      sessionStorage.roundId = $(this).data('id');
-   } catch(e) {
-         throw("No id detected")
-      }
+
+   .on("click",".js-course-delete", function(e) {
+      submitDeleteCourse();
    })
+
+     .on("click", ".course-profile-nav>div", function(e) {
+      let id = $(this).index();
+      $(this).parent()
+         .next().children().eq(id)
+         .addClass("active")
+         .siblings().removeClass("active")
+      $(this).addClass("active")
+         .siblings().removeClass("active")
+   })
+
 
 
 

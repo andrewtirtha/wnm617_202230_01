@@ -19,26 +19,31 @@ const makeUserProfilePage = o => `
             <br>
             <div class="text-center">
                 <img src="${o.img}" alt="" class="user-profile-image">
-            </div></div>
-            <form class="user-form" id="user-profile-page" >
-               <p class="user-profile-title">Name</p>
-               <p class="user-profile-info">${o.name}</p>
+            </div>
+            <div class="user-form" id="user-profile-page">
 
-               <p class="user-profile-title">Username</p>
-               <p class="user-profile-info">@${o.username}</p>
+               <div class="user-profile-name ">${o.name}</div>
 
-               <p class="user-profile-title">Email</p>
-               <p class="user-profile-info">${o.email}</p>
-         
-               <p class="user-profile-title">Handicap</p>
-               <p class="user-profile-info">${o.handicap}</p>
-               <br>
-               <br>
-               <br>
-               <div class="hotdog color">
-               <a href="#" class="js-logout">Logout</a>
+               <div class="user-profile-username">@${o.username}</div>
+
+               <div class="user-info">
+                  <div class="user-profile-description">
                </div>
-            </form>
+
+
+               <div class="user-info">
+                  <div class="card email">
+                    <div class="user-profile-email">${o.email}</div>
+                  </div>
+                  <div class="card handicap">
+                      <div class="user-profile-handicap">${o.handicap}</div>
+                  </div>
+               </div
+
+
+
+            
+            </div>
          </div>
 `;
 
@@ -59,7 +64,6 @@ const makeCourseProfileDescription = o => `
 const makeCourseProfileRounds  = o => `
 <h5>Rounds</h5>
 	<form class="course-form" id="course-profile-round">
-           <p class="course-profile-rounds">${o.id}</p>
            <p class="course-profile-round-title">Date Played</p>
            <p class="course-profile-rounds">${o.date_played}</p>
            <p class="course-profile-round-title">Score</p>
@@ -69,6 +73,80 @@ const makeCourseProfileRounds  = o => `
     </form>
 `
 
+
+
+const FormControlInput = ({namespace,name,displayname,type,placeholder,value=""}) => {
+   return `<div class="form-control">
+      <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
+      <input data-role="none" class="form-input" type="${type}" placeholder="${placeholder}" id="${namespace}-${name}" value="${value}">
+   </div>`;
+}
+const FormControlTextarea = ({namespace,name,displayname,placeholder,value=""}) => {
+   return `<div class="form-control">
+      <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
+      <textarea data-role="none" class="form-input" placeholder="${placeholder}" id="${namespace}-${name}">${value}</textarea>
+   </div>`;
+}
+
+
+const makeCourseForm = (course,namespace = "course-add") => {
+return `
+${FormControlInput({
+   namespace,
+   name:"name",
+   displayname:"Name",
+   type:"text",
+   placeholder:"Type a Name",
+   value:course.name,
+})}
+${FormControlInput({
+   namespace,
+   name:"type",
+   displayname:"Type",
+   type:"text",
+   placeholder:"Type a Type",
+   value:course.type,
+})}
+
+${FormControlInput({
+   namespace,
+   name:"description",
+   displayname:"Description",
+   type:"text",
+   placeholder:"Type a Description",
+   value:course.description,
+})}
+`;
+}
+
+const makeUserForm = (user,namespace = "user-edit") => {
+return `
+${FormControlInput({
+   namespace,
+   name:"name",
+   displayname:"Name",
+   type:"text",
+   placeholder:"Type a Name",
+   value:user.name,
+})}
+${FormControlInput({
+   namespace,
+   name:"username",
+   displayname:"Username",
+   type:"text",
+   placeholder:"Type a Username",
+   value:user.username,
+})}
+${FormControlInput({
+   namespace,
+   name:"email",
+   displayname:"Email",
+   type:"text",
+   placeholder:"Type an Email",
+   value:user.email,
+})}
+`;
+}
 
 
 

@@ -1,10 +1,12 @@
 //location template
 
 [
-  '{{repeat(250)}}',
+  '{{repeat(50)}}',
   {
     id: '{{index(1)}}',
-    course_id: '{{integer(1,50)}}',
+    user_id:: '{{integer(1,50)}}',
+    name: '{{city()}}' + '{{random(" Golf Course", " Golf Club", " Golf Links")}}',
+    type: '{{random("links","parkland","municipal")}}',
     
     lat: '{{floating(37.780554, 37.212407)}}',
     lng: '{{floating(-122.49100, -121.793159)}}',
@@ -12,11 +14,10 @@
      
     description: '{{lorem(3, "sentences")}}',
    
-    img: 'https:/via.placeholder.com/400/',
+    img: 'https:/via.placeholder.com/400/?text=COURSE',
     icon: 'https:/via.placeholder.com/400/?text=ICON',
     date_create: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss ")}}'
-    
-
+  
       
   }
 ]
@@ -76,7 +77,7 @@
 //round template
 
 [
-  '{{repeat(20)}}',
+  '{{repeat(100)}}',
     {
       id: '{{index(1)}}',
       course_id: '{{integer(1,50)}}',
