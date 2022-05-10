@@ -26,8 +26,10 @@ const submitCourseAdd = async () => {
 }
 
 const submitUserSignup = async () => {
+   let name = $("signup-name").val();
    let username = $("#signup-username").val();
    let email = $("#signup-email").val();
+   let handicap = $("signup-handicap").val();
    let password = $("#signup-password").val();
    let password2 = $("#signup-password2").val();
 

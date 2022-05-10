@@ -113,14 +113,15 @@ function makeStatement($data) {
          ", $p);
 
           case "insert_user":
-         $r = makeQuery($c,"SELECT id FROM `golflog_users` WHERE `username`=? OR `email` = ?",$p);
-         if(count($r['result'])) return ["error"=>"Username or Email already exists"];
+         $r = makeQuery($c,"SELECT id FROM `golflog_users` WHERE `username`=? OR `email` = ?",[ $p[0], $p[1] ]);
+         if(count($r['result'])) 
+            return ["error"=>"Username or Email already exists"];
 
          makeQuery($c,"INSERT INTO
-            `track_202230_users`
-            (`username`,`email`,`password`,`img`,`date_create`)
+            `golflog_users`
+            (`name`, `username`,`email`, `handicap`,`password`,`img`,`date_create`)
             VALUES
-            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            (?, ?, ?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
             ", $p, false);
          return ["id"=>$c->lastInsertId()];
 

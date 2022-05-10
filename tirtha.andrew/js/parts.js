@@ -12,14 +12,14 @@ const makeCourseList = templater(o=>`
   </li>
 `);
 
-
+// <div class="text-center">
+        //        <img src="${o.img}" alt="" class="user-profile-image">
+        //   </div> 
 
 const makeUserProfilePage = o => `
 <div data-role="main" class="overscroll">
             <br>
-            <div class="text-center">
-                <img src="${o.img}" alt="" class="user-profile-image">
-            </div>
+           
             <div class="user-form" id="user-profile-page">
 
                <div class="user-profile-name ">${o.name}</div>
