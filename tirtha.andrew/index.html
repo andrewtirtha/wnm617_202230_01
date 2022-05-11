@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Golflog</title>
+   <title>Animal Tracker</title>
 
    <base href="/aau/wnm617/tirtha.andrew/">
 
@@ -13,18 +11,18 @@
    <link rel="stylesheet" href="css/app.css">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
-   
+
    <script src="js/app.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/functions.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
-   <script src="js/maps.js"></script>
    <script src="js/forms.js"></script>
+   <script src="js/maps.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
-<script
+   <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC46OrLyoGQKQIoc2xHG7pthvz2Dh1Z7ik"
       defer
     ></script>
@@ -35,7 +33,9 @@
 </head>
 <body>
 
-   <!-- sign in page -->
+
+
+
 
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
@@ -64,27 +64,17 @@
       </div>
    </section>
 
-    <!-- sign up page -->
-
-    <section data-role="page" id="signup-page">
+   <section data-role="page" id="signup-page">
       <div data-role="main" class="display-flex flex-column">
          <div class="flex-stretch"></div>
          <form id="signup-form" class="form" data-ajax="false">
-            <div class="form-control">
-               <label for="signup-name" class="form-label">Name</label>
-               <input type="text" id="signup-name" data-role="none" class="form-input" placeholder="Type your Name">
-            </div>
             <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
                <input type="text" id="signup-username" data-role="none" class="form-input" placeholder="Type your Username">
             </div>
             <div class="form-control">
                <label for="signup-email" class="form-label">Email</label>
-               <input type="text" id="signup-email" data-role="none" class="form-input" placeholder="Type your Email">
-            </div>
-            <div class="form-control">
-               <label for="signup-handicap" class="form-label">Handicap</label>
-               <input type="text" id="signup-handicap" data-role="none" class="form-input" placeholder="Type your Handicap">
+               <input type="email" id="signup-email" data-role="none" class="form-input" placeholder="Type your Email">
             </div>
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
@@ -96,7 +86,7 @@
             </div>
             <!-- <input type="submit" data-role="none"> -->
             <div class="form-control">
-               <button type="submit" class="form-button">Sign Up</button>
+               <button type="submit" class="form-button" data-role="none">Sign Up</button>
                <!-- <a href="#recent-page" class="form-button">Sign Up</a> -->
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em;">
@@ -108,13 +98,21 @@
    </section>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
  <!-- recent page -->
 
-     <section data-role="page" id="recent-page">
-      <header data-role="header">
-         <h1 class="ui-title" role="heading" aria-level="1">Map View</h1>
-
-      </header>
+   <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="map"></div>
          <div class="recent-search">
@@ -125,56 +123,34 @@
                <img src="images/icons/filter.svg" style="vertical-align: middle;" alt="" class="icon">
             </div>
          </div>
-         
+         <a href="#choose-animal-page" class="floater bottom right circle-button">&plus;</a>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
 
-<!--
       <div class="modal" id="map-drawer">
-         <div class="modal-back" data-deactivate="#map-drawer"></div>
+         <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
          <div class="modal-drawer top">
-            <div class="modal-head display-flex">
-               <div class="flex-none">Course Info</div>
-               <div class="flex-stretch"></div>
-               <div class="flex-none">
-                  <a href="#" data-deactivate="#map-drawer">&times;</a>
-               </div>
-               
-            </div>
-            <div class="modal-body">
-               <h2>The Golf Club at Moffett Field</h2>
-               <br>
-               <img src="images/moffett.jpeg" alt="" class="course-img">
-               <br>
-               <p class="modal-info">The Golf Club at Moffett Field features a 18-hole golf course and is located near Mountain View, California. The course measures 6,517 yards from the back tees and plays to a par of 72. The course rating is 71.0 and Moffett Field has a slope rating of 126 on the kikuyu grass fairways. Moffett Field Golf Course opened in 1959 and is managed by OB Sports Golf Management.</p>
-               <br>
-            </div>
+            <div class="modal-body"></div>
          </div>
       </div>
-   -->
    </section>
-
-
-
-
 
  <!-- list page -->
 
-
+ 
    <section data-role="page" id="list-page">
-      <header data-role="header">
-      <h1 class="ui-title" role="heading" aria-level="1">Course List</h1>
-      </header>
       <div data-role="main">
-         <!-- ul>li*10>a[href=#course-profile-page]>{Course $} -->
-         <ul class="course-list">
-            
-          
-         </ul>
-         <div class="floater bottom right circle-button">
-            <a href="#course-add-page">&plus;</a>
+         <div class="search-bar header flex-none">
+            <form data-ajax="false" id="list-search-form" class="hotdog">
+               <input type="search" data-role="none" placeholder="Search For An Animal">
+            </form>
          </div>
-      </div>
+         <div class="filter-bar header flex-none">
+            
+         </div>
+
+         <ul class="animal-list"></ul>
+         <a href="#animal-add-page" class="floater bottom right circle-button">&plus;</a>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
@@ -186,117 +162,130 @@
 
 
 
-
-<!-- course profile -->
-
+ <!-- animal profile page -->
 
 
-   <section data-role="page" id="course-profile-page">
+   <section data-role="page" id="animal-profile-page">
       <header data-role="header">
          <h1></h1>
          <ul>
-         <li>
-            <a href="#" data-rel="back">Back</a>
-         </li>
-         <li class="flex-stretch"></li>
-         <li>
-            <a href="#course-edit-page" data-role="none">
-               <img src="images/icons/edit.svg" class="edit-icon" alt="edit icon">
-            </a>
-         </li>
-         </ul>
-      </header>
-
-       <div data-role="main" class="overscroll">
-         <div class="course-profile-top">
-         </div>
-         <div class="course-profile-description">
-         </div>
-         <div class="course-profile-rounds">   
-         </div>   
-      </div>
-
-      <div class="floater bottom right circle-button">
-            <a href="#addnew-round-modal">&plus;</a>
-      </div>
-
-
-
-      <!--view round modal-->
-       <div class="modal" id="list-view-round-modal">
-         <div class="modal-back" data-deactivate="#list-add-round-modal"></div>
-         <div class="modal-popup">
-            <div class="modal-head">
-               <h5>View Round</h5>
-            </div>
-            
-            <div class="modal-foot" style="text-align:right" data-deactivate="#list-view-round-modal">
-               Close
-            </div>
-         </div>
-      </div>
-   </section>
-
-      <!--add new round modal-->
-
-      <div class="modal" id="addnew-round-modal">
-         <div class="modal-back" data-deactivate="#list-add-round-modal"></div>
-         <div class="modal-popup">
-            <div class="modal-head">
-               <h5>Add Round</h5>
-            </div>
-            
-            <div class="modal-foot" style="text-align:right" data-deactivate="#addnew-round-modal">
-               Submit
-            </div>
-         </div>
-      </div>
-   </section>
-
-
-
-
-   
-
-<!-- edit course profile -->
-
-<section data-role="page" id="course-edit-page">
-      <header data-role="header">
-         <h1>Edit Course Profile</h1>
-         <ul>
-            <li>
-                 <a href="#" data-rel="back">Back</a>
-            </li>
+            <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
+            <li><a href="#animal-edit-page">Edit</a></li>
          </ul>
       </header>
-
       <div data-role="main">
-        <div class="modal" id="course-photo-upload-modal">
-                <div class="modal-back" data-deactivate="#course-photo-upload-modal">  
-                </div>
-            <div class="modal-drawer top">
-            <div class="modal-head display-flex">
-               
-            </div>
-            <div class="modal-body">
-               <h4 class="modal-head-text">Please upload a new image</h4>
-                    <div class="upload">
-                     <input type="file" name="filename">
-                     <br>
-                     <input type="submit">
-                    </div>
-               </div>
-            </div>
+         <div class="animal-profile-top">
+            <a href="#" class="floater bottom right js-animal-delete noclick-children"><img src="images/icons/trash.svg" class="icon"></a>
+            <a href="#animal-edit-photo-page" class="floater bottom left"><img src="images/icons/pencil.svg" class="icon"></a>
          </div>
-         <form id="course-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
-         </form>
-        </div>
-         
-    </div>
+         <div class="animal-profile-nav">
+            <div class="active">Map</div>
+            <div>Description</div>
+         </div>
+         <div class="animal-profile-bottom">
+            <div class="animal-profile-map active">
+               <div class="map map-placeholder"></div>
+               <a href="#choose-location-page" class="floater bottom right circle-button js-location-choose-animal">&plus;</a>
+            </div>
+            <div class="animal-profile-description"></div>
+         </div>
+      </div>
    </section>
 
-<!-- user profile page -->
+ <!-- animal add page -->
+
+   <section data-role="page" id="animal-add-page">
+      <header data-role="header">
+         <h1>New Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-animal-add">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
+      </div>
+   </section>
+
+    <!-- animal edit page -->
+
+   <section data-role="page" id="animal-edit-page">
+      <header data-role="header">
+         <h1>Edit Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-animal-edit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="animal-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
+         </form>
+      </div>
+   </section>
+
+
+
+
+ <!-- choose animal page -->
+
+
+   <section data-role="page" id="choose-animal-page">
+      <header data-role="header">
+         <h1>Choose Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#choose-location-page">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="location-animal">
+      </div>
+   </section>
+
+
+<!-- choose location page -->
+
+
+   <section data-role="page" id="choose-location-page">
+      <header data-role="header">
+         <h1>Choose Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#choose-description-page">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="location-lat">
+         <input type="hidden" id="location-lng">
+         <div class="map"></div>
+      </div>
+   </section>
+
+    <!-- choose description page -->
+
+   <section data-role="page" id="choose-description-page">
+      <header data-role="header">
+         <h1>Describe The Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-location-add">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" style="padding:1em">
+         <textarea id="location-description" class="form-input" data-role="none"></textarea>
+      </div>
+   </section>
+
+
+ <!-- user profile page -->
+
+
 
    <section data-role="page" id="user-profile-page">
       <header data-role="header">
@@ -316,9 +305,11 @@
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 
-   <!-- user settings page -->
+   
 
-    <section data-role="page" id="user-settings-page">
+ <!-- user settings page -->
+
+   <section data-role="page" id="user-settings-page">
       <header data-role="header">
          <h1>User Settings</h1>
          <ul>
@@ -345,7 +336,7 @@
       </div>
    </section>
 
-   <!-- user edit page -->
+    <!-- user edit page -->
 
    <section data-role="page" id="user-edit-page">
       <header data-role="header">
@@ -361,46 +352,8 @@
          </form>
       </div>
    </section>
-<!--
-   <section data-role="page" id="user-edit-page">
-      <header data-role="header">
-         <h1>Edit User</h1>
-         <ul>
-         <li>
-            <a href="#" data-rel="back">Back</a>
-         </li>
-         <li class="flex-stretch"></li>
-         <li><a href="#" class="js-submit-user-edit">Save</a></li>
-      </ul>
-      </header>
-      <div data-role="main">
-           <div class="modal" id="user-photo-upload-modal">
-                <div class="modal-back" data-deactivate="#user-photo-upload-modal">  
-                </div>
-            <div class="modal-drawer top">
-            <div class="modal-head display-flex">
-               
-            </div>
-            <div class="modal-body">
-               <h4 class="modal-head-text">Please upload a new image</h4>
-                    <div class="upload">
-                     <input type="file" name="filename">
-                     <br>
-                     <input type="submit">
-                    </div>
-               </div>
-            </div>
-         </div>
 
-         <div data-role="main" class="overscroll">
-            <form id="user-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
-            </form>
-        </div>
-   </div>
-   </section>
--->
-
-<!-- edit password page -->
+    <!-- user password page -->
 
    <section data-role="page" id="user-password-page">
       <header data-role="header">
@@ -431,72 +384,47 @@
 
 
 
-   <!-- Add New course-->
-
-   <section data-role="page" id="course-add-page">
-        <header data-role="header">
-         <h1>Add New</h1>
+  <section data-role="page" id="user-edit-photo-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
          <ul>
-         <li>
-            <a href="#" data-rel="back">Back</a>
-         </li>
-         <li class="flex-stretch"></li>
-         <li><a href="#" class="js-submit-course-add">Save</a></li>
-      </ul>
+            <li><a href="#">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back" class="js-submit-user-upload">Save</a></li>
+         </ul>
       </header>
-        
-   <div data-role="main">
-      <div data-role="main" class="overscroll">
-            <div class="text-center">
-            <img src="images/icons/camera.svg" alt="upload-icon" class="upload-icon" data-activate="#upload-course-modal">
-        </div>
-
-            <div class="modal" id="upload-course-modal">
-                <div class="modal-back" data-deactivate="#upload-course-modal">  
-                </div>
-               <div class="modal-drawer top">
-                  <div class="modal-head display-flex">
-               
-                  </div>
-                   <div class="modal-body">
-                     <h4 class="modal-head-text">Please upload a new image </h4>
-                    <div class="upload">
-                     <input type="file" name="filename">
-                     <br>
-                     <input type="submit">
-                    </div>
-                  </div>
-               </div>
-            </div>
-
       <div data-role="main">
-         <form id="course-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
+         <input type="hidden" id="user-edit-photo-image">
+         <label class="imagepicker replace">
+            <input type='file' id="user-edit-photo-input" data-role="none">
+         </label>
+      </div>
+   </section>
+
+  <section data-role="page" id="animal-edit-photo-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back" class="js-submit-animal-upload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="animal-edit-photo-image">
+         <label class="imagepicker replace">
+            <input type='file' id="animal-edit-photo-input" data-role="none">
+         </label>
       </div>
    </section>
 
 
 
-<div class="modal" id="map-drawer">
-   <div class="modal-back"></div>
-   <div class="modal-drawer">
-      <div class="modal-head"></div>
-   </div>
 
-</div>
 
-   </section>
 
-   <div class="modal" id="list-add-course-modal">
-      <div class="modal-back" data-deactivate="#list-add-course-modal"></div>
-      <div class="modal-popup">
-         <div class="modal-head">!</div>
-         <div class="modal-body">!</div>
-         <div class="modal-foot">!</div>
-      </div>
 
-   </div>
-
-  <script type="text/template" id="footer-template">
+   <script type="text/template" id="footer-template">
       <ul class="nav-icon-set">
          <li><a href="#recent-page" data-activateone=".nav-icon-set li:nth-child(1)">
             <span class="nav-icon"><img class="icon" src="images/icons/map.svg"></span>
@@ -504,7 +432,7 @@
          </a></li>
          <li><a href="#list-page" data-activateone=".nav-icon-set li:nth-child(2)">
             <span class="nav-icon"><img class="icon" src="images/icons/list.svg"></span>
-            <span class="nav-icon-label">List</span>
+            <span class="nav-icon-label">Log</span>
          </a></li>
          <li><a href="#user-profile-page" data-activateone=".nav-icon-set li:nth-child(3)">
             <span class="nav-icon"><img class="icon" src="images/icons/profile.svg"></span>

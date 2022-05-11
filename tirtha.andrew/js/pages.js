@@ -1,49 +1,63 @@
-
 const RecentPage = async() => {
 
 
-   let {result} = await query({
-      type:'recent_course_locations',
+   let {result,error} = await query({
+      type:'recent_animal_locations',
       params:[sessionStorage.userId]
    });
    console.log(result);
 
-   
+   if(error) throw(error);
 
-   let valid_courses = result.reduce((r,o)=>{
+   let valid_animals = result.reduce((r,o)=>{
       o.icon = o.img;
       if(o.lat && o.lng) r.push(o);
       return r;
    },[]);
 
    let map_el = await makeMap("#recent-page .map");
-   makeMarkers(map_el,valid_courses)
+   makeMarkers(map_el,valid_animals)
 
-    map_el.data("markers").forEach((m,i)=>{
+   map_el.data("markers").forEach((m,i)=>{
       console.log(m)
       m.addListener("click",function(e){
+         let animal = valid_animals[i];
 
-         console.log(valid_courses[i])
+         console.log(animal)
 
          // Just Navigate
-         sessionStorage.courseId = valid_courses[i].course_id;
-         $.mobile.navigate("#course-profile-page");
+         // sessionStorage.animalId = animal.animal_id;
+         // $.mobile.navigate("#animal-profile-page");
 
 
+         // Open Google InfoWindow
+         // map_el.data("infoWindow")
+         //    .open(map_el.data("map"),m);
+         // map_el.data("infoWindow")
+         //    .setContent(makeAnimalPopupBody(animal));
+
+
+         $("#map-drawer")
+            .addClass("active")
+            .find(".modal-body")
+            .html(makeAnimalPopupBody({...animal, id:animal.animal_id}))
       })
    })
 }
 
 
-
 const ListPage = async() => {
-	let {result:courses} = await query({
-	type:'courses_by_user_id',
-	params:[sessionStorage.userId]
-	})
-		console.log(courses)
-	$("#list-page .course-list").html(makeCourseList(courses));
-	}
+   // destructuring
+   let {result:animals} = await query({
+      type:'animals_by_user_id',
+      params:[sessionStorage.userId]
+   })
+   
+   console.log(animals)
+
+   makeAnimalListSet(animals);
+}
+
 
 
 const UserProfilePage = async() => {
@@ -68,47 +82,96 @@ const UserEditPage = async() => {
 }
 
 
-
-const CourseProfilePage = async() => {
-   let {result:courses} = await query({
-      type:'course_by_id',
-      params:[sessionStorage.courseId]
+const UserEditPhotoPage = async () => {
+   let {result:users} = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
    })
-   let [course] = courses;
+   let [user] = users;
 
- $(".course-profile-top").css({"background-image":`url(${course.img})`})
- $("#course-profile-page h1").html(course.name)
- $(".course-profile-description").html(makeCourseProfileDescription(course));
-
-
-  let {result:rounds} = await query({
-      type:'rounds_by_course_id',
-      params:[sessionStorage.courseId]
+   $("#user-edit-photo-page .imagepicker").css({
+      "background-image":`url(${user.img})`
    })
-   let [round] = rounds;
-
-   console.log(round)
-
-    $(".course-profile-rounds").html(makeCourseProfileRounds(round));
-
 }
 
-const CourseEditPage = async() => {
-   let {result:courses} = await query({
-      type:'course_by_id',
-      params:[sessionStorage.courseId]
-   })
-   let [course] = courses;
 
-   $("#course-edit-form").html(makeCourseForm(courses,"courses-edit"))
+
+
+
+
+
+
+
+
+const AnimalProfilePage = async() => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+   $(".animal-profile-top").css({"background-image":`url(${animal.img})`})
+   $("#animal-profile-page h1").html(animal.name)
+   $(".animal-profile-description").html(makeAnimalProfileDescription(animal));
+
+   let {result:locations} = await query({
+      type:'locations_by_animal_id',
+      params:[sessionStorage.animalId]
+   })
+   console.log(locations)
+
+   let map_el = await makeMap("#animal-profile-page .map");
+   makeMarkers(map_el,locations)
 }
 
-const CourseAddPage = async() => {
-   let {result:courses} = await query({
-      type:'course_by_id',
-      params:[sessionStorage.courseId]
+const AnimalEditPage = async() => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
    })
-   let [course] = courses;
+   let [animal] = animals;
 
-   $("#course-add-form").html(makeCourseForm({},"course-add"))
+   $("#animal-edit-form").html(makeAnimalForm(animal,"animal-edit"))
 }
+const AnimalAddPage = async() => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
+}
+
+const AnimalEditPhotoPage = async () => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animal;
+
+   $("#animal-edit-photo-page .imagepicker").css({
+      "background-image":`url(${animal.img})`
+   })
+}
+
+
+
+
+const ChooseLocationPage = async () => {
+   let map_el = await makeMap("#choose-location-page .map");
+
+   map_el.data("map").addListener("click",function(e){
+      console.log(e)
+      $("#location-lat").val(e.latLng.lat())
+      $("#location-lng").val(e.latLng.lng())
+      makeMarkers(map_el,[e.latLng])
+   })
+}
+
+
+
+
+
+
+
+

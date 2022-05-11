@@ -1,26 +1,27 @@
 
-
-const makeCourseList = templater(o=>`
-<li class="course-list-item">
-    <a href="#course-profile-page" class="js-course-jump" data-id="${o.id}">
-        <div class="course-list-image"><img src="${o.img}" alt=""></div>
-            <div class="course-list-body">
-                <div class="course-list-name">${o.name}</div>
-                <div class="course-list-type">Type: ${o.type}</div>
-            </div>
-    </a>
-  </li>
+const makeAnimalList = templater(o=>`
+<li class="animal-list-item">
+   <a href="#animal-profile-page" class="js-animal-jump" data-id="${o.id}">
+      <div class="animal-list-image"><img src="${o.img}" alt=""></div>
+      <div class="animal-list-body">
+         <div class="animal-list-name">${o.name}</div>
+         <div class="animal-list-breed">Breed: ${o.breed}</div>
+         <div class="animal-list-color">Color: ${o.color}</div>
+      </div>
+   </a>
+</li>
 `);
 
-// <div class="text-center">
-        //        <img src="${o.img}" alt="" class="user-profile-image">
-        //   </div> 
 
 const makeUserProfilePage = o => `
 <div data-role="main" class="overscroll">
             <br>
+
            
             <div class="user-form" id="user-profile-page">
+            <div class="text-center">
+             <img src="${o.img}" alt="" class="user-profile-image">
+           </div> 
 
                <div class="user-profile-name ">${o.name}</div>
 
@@ -35,9 +36,6 @@ const makeUserProfilePage = o => `
                   <div class="card email">
                     <div class="user-profile-email">${o.email}</div>
                   </div>
-                  <div class="card handicap">
-                      <div class="user-profile-handicap">${o.handicap}</div>
-                  </div>
                </div
 
 
@@ -48,30 +46,33 @@ const makeUserProfilePage = o => `
 `;
 
 
+const makeAnimalProfileDescription = o => `
 
-const makeCourseProfileDescription = o => `
-<form class="course-form" id="course-profile">
-         <p class="course-profile-title">Type</p>
-         <p class="course-profile-info">${o.type}</p>
-         
-
-         <p class="course-profile-title">Description</p>
-         <p class="course-profile-info">${o.description}</p> 
-</form>
-<hr>
+ <br>
+<div class="animal-profile-title">Breed:</div>
+<div class="card profile">
+<div class="animal-profile-breed ">${o.breed}</div>
+</div>
+<div class="animal-profile-title">Color:</div>
+<div class="card profile">
+<div class="animal-profile-color ">${o.color}</div>
+</div>
 `;
 
-const makeCourseProfileRounds  = o => `
-<h5>Rounds</h5>
-	<form class="course-form" id="course-profile-round">
-           <p class="course-profile-round-title">Date Played</p>
-           <p class="course-profile-rounds">${o.date_played}</p>
-           <p class="course-profile-round-title">Score</p>
-           <p class="course-profile-rounds">${o.score}</p>
-           <p class="course-profile-round-title">Tee</p>
-           <p class="course-profile-rounds">${o.tee}</p>
-    </form>
-`
+
+
+
+
+const makeAnimalPopupBody = o => `
+<div class="display-flex js-animal-jump noclick-children" data-id="${o.id}">
+   <div class="animal-list-image"><img src="${o.img}" alt=""></div>
+   <div>
+      <h2>${o.name}</h2>
+      <div>${o.type}</div>
+      <div>${o.breed}</div>
+   </div>
+</div>
+`;
 
 
 
@@ -89,7 +90,7 @@ const FormControlTextarea = ({namespace,name,displayname,placeholder,value=""}) 
 }
 
 
-const makeCourseForm = (course,namespace = "course-add") => {
+const makeAnimalForm = (animal,namespace = "animal-add") => {
 return `
 ${FormControlInput({
    namespace,
@@ -97,27 +98,34 @@ ${FormControlInput({
    displayname:"Name",
    type:"text",
    placeholder:"Type a Name",
-   value:course.name,
+   value:animal.name,
 })}
 ${FormControlInput({
    namespace,
-   name:"type",
-   displayname:"Type",
+   name:"breed",
+   displayname:"Breed",
    type:"text",
-   placeholder:"Type a Type",
-   value:course.type,
+   placeholder:"Type a Breed",
+   value:animal.breed,
 })}
-
 ${FormControlInput({
+   namespace,
+   name:"color",
+   displayname:"Color",
+   type:"text",
+   placeholder:"Type a Color",
+   value:animal.color,
+})}
+${FormControlTextarea({
    namespace,
    name:"description",
    displayname:"Description",
-   type:"text",
    placeholder:"Type a Description",
-   value:course.description,
+   value:animal.description,
 })}
 `;
 }
+
 
 const makeUserForm = (user,namespace = "user-edit") => {
 return `
@@ -153,3 +161,24 @@ ${FormControlInput({
 
 
 
+const makeAnimalListSet = (animals, target="#list-page .animal-list") => {
+   $(".filter-bar").html(makeFilterList(animals));
+   $(target).html(makeAnimalList(animals));
+}
+
+const capitalize = s => s[0].toUpperCase()+s.substr(1);
+
+const filterList = (animals,breed) => {
+   let a = [...(new Set(animals.map(o=>o[breed])))];
+   return templater(o=>o?`<span data-filter="${breed}" data-value="${o}">${capitalize(o)}</span>`:'')(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <span data-filter="breed" data-value="">All</span>
+   |
+   ${filterList(animals,'breed')}
+   |
+   ${filterList(animals,'color')}
+   `;
+}

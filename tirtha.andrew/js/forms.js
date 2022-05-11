@@ -1,35 +1,62 @@
 
 
-
-const submitCourseAdd = async () => {
-   let name = $("#course-add-name").val();
-   let type = $("#course-add-type").val();
-   let description = $("#course-add-description").val();
-
-   console.log({name,type,description});
+const submitAnimalAdd = async () => {
+   let name = $("#animal-add-name").val();
+   let breed = $("#animal-add-breed").val();
+   let color = $("#animal-add-color").val();
+   let description = $("#animal-add-description").val();
 
 
+   console.log({name,breed,color,description});
 
-   if(name!="" && type!="" && description!="") {
+   if(name!="" && breed!="" && color!="" && description!="") {
       let {id,error} = await query({
-         type: 'insert_course',
-         params: [sessionStorage.userId,name,type,description]
+         type: 'insert_animal',
+         params: [sessionStorage.userId,name,breed,color,description]
       });
 
       if(error) throw(error);
 
-      sessionStorage.courseId = id;
+      sessionStorage.animalId = id;
       history.go(-1);
    } else {
       throw("Not all data present");
    }
 }
 
+const submitAnimalEdit = async () => {
+   let name = $("#animal-edit-name").val();
+   let breed = $("#animal-edit-breed").val();
+   let type = $("#animal-edit-color").val();
+   let description = $("#animal-edit-description").val();
+
+   let {result,error} = await query({
+      type: 'update_animal',
+      params: [name,breed,color,description,sessionStorage.animalId]
+   });
+
+   if(error) throw(error);
+
+   history.go(-1);
+}
+
+const submitDeleteAnimal = async () => {
+   let {result,error} = await query({
+      type: 'delete_animal',
+      params: [sessionStorage.animalId]
+   });
+
+   if(error) throw(error);
+   history.go(-1);
+}
+
+
+
+
+
 const submitUserSignup = async () => {
-   let name = $("signup-name").val();
    let username = $("#signup-username").val();
    let email = $("#signup-email").val();
-   let handicap = $("signup-handicap").val();
    let password = $("#signup-password").val();
    let password2 = $("#signup-password2").val();
 
@@ -50,3 +77,63 @@ const submitUserSignup = async () => {
       throw("Not all data present");
    }
 }
+
+const submitUserEdit = async () => {
+   let name = $("#user-edit-name").val();
+   let username = $("#user-edit-username").val();
+   let email = $("#user-edit-email").val();
+
+   console.log({name,username,email})
+
+   let {result,error} = await query({
+      type: 'update_user',
+      params: [name,username,email,sessionStorage.userId]
+   });
+
+   if(error) throw(error);
+
+   history.go(-1);
+}
+
+
+
+
+const submitLocationAdd = async () => {
+   let animal = $("#location-animal").val();
+   let lat = $("#location-lat").val();
+   let lng = $("#location-lng").val();
+   let description = $("#location-description").val();
+
+   let {result,error} = await query({
+      type: 'insert_location',
+      params: [animal,lat,lng,description]
+   });
+
+   if(error) throw(error);
+
+   history.go(-2);
+}
+
+
+const checkSearchForm = async (s) => {
+   let {result:animals,error} = await query({
+      type: 'search_animals',
+      params: [s, sessionStorage.userId]
+   });
+
+   if(error) throw(error);
+
+   makeAnimalListSet(animals);
+}
+const checkFilter = async (f,v) => {
+   let {result:animals,error} = await query({
+      type: 'filter_animals',
+      params: [f, v, sessionStorage.userId]
+   });
+
+   if(error) throw(error);
+
+   makeAnimalListSet(animals);
+}
+
+
