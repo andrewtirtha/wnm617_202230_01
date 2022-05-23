@@ -27,7 +27,7 @@ const submitAnimalAdd = async () => {
 const submitAnimalEdit = async () => {
    let name = $("#animal-edit-name").val();
    let breed = $("#animal-edit-breed").val();
-   let type = $("#animal-edit-color").val();
+   let color = $("#animal-edit-color").val();
    let description = $("#animal-edit-description").val();
 
    let {result,error} = await query({

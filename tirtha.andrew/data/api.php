@@ -217,20 +217,20 @@ function makeStatement($data) {
          return ["result"=>"Success"];
 
 
-      /* UPLOAD */
+        /* UPLOAD */
 
       case "update_user_image":
-         makeQuery($c,"UPDATE
-            `doglog_users
+         $r = makeQuery($c,"UPDATE
+            `doglog_users`
             SET `img` = ?
             WHERE `id` = ?
             ",$p,false);
          if(isset($r['error'])) return $r;
          return ["result"=>"Success"];
 
-       case "update_animal_image":
-         makeQuery($c,"UPDATE
-            `doglog_animals
+      case "update_animal_image":
+         $r = makeQuery($c,"UPDATE
+            `doglog_animals`
             SET `img` = ?
             WHERE `id` = ?
             ",$p,false);

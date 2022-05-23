@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Animal Tracker</title>
+   <title>Doglog</title>
 
    <base href="/aau/wnm617/tirtha.andrew/">
 
@@ -52,6 +52,10 @@
                <label for="signin-password" class="form-label">Password</label>
                <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Type your Password">
             </div>
+            <br>
+            <br>
+           
+            
             <!-- <input type="submit" data-role="none"> -->
             <div class="form-control">
                <button type="submit" class="form-button" data-role="none">Submit</button>
@@ -139,7 +143,7 @@
 
  
    <section data-role="page" id="list-page">
-      <div data-role="main">
+      
          <div class="search-bar header flex-none">
             <form data-ajax="false" id="list-search-form" class="hotdog">
                <input type="search" data-role="none" placeholder="Search For An Animal">
@@ -148,6 +152,7 @@
          <div class="filter-bar header flex-none">
             
          </div>
+      <div data-role="main">
 
          <ul class="animal-list"></ul>
          <a href="#animal-add-page" class="floater bottom right circle-button">&plus;</a>
@@ -294,7 +299,7 @@
          <li class="flex-stretch"></li>
          <li>
             <a href="#user-settings-page" data-role="none">
-               <img src="images/icons/edit.svg" class="edit-icon" alt="edit icon">
+               <img src="images/icons/settings.svg" class="settings-icon" alt="settings icon">
             </a>
          </li>
          </ul>
@@ -384,13 +389,13 @@
 
 
 
-  <section data-role="page" id="user-edit-photo-page">
+    <section data-role="page" id="user-edit-photo-page">
       <header data-role="header">
          <h1>Upload Photo</h1>
          <ul>
-            <li><a href="#">Back</a></li>
+            <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back" class="js-submit-user-upload">Save</a></li>
+            <li><a href="#" class="js-submit-user-upload">Save</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -401,11 +406,12 @@
       </div>
    </section>
 
+
   <section data-role="page" id="animal-edit-photo-page">
       <header data-role="header">
          <h1>Upload Photo</h1>
          <ul>
-            <li><a href="#">Back</a></li>
+            <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
             <li><a href="#" data-rel="back" class="js-submit-animal-upload">Save</a></li>
          </ul>
@@ -426,13 +432,13 @@
 
    <script type="text/template" id="footer-template">
       <ul class="nav-icon-set">
-         <li><a href="#recent-page" data-activateone=".nav-icon-set li:nth-child(1)">
-            <span class="nav-icon"><img class="icon" src="images/icons/map.svg"></span>
-            <span class="nav-icon-label">Recent</span>
-         </a></li>
-         <li><a href="#list-page" data-activateone=".nav-icon-set li:nth-child(2)">
+         <li><a href="#list-page" data-activateone=".nav-icon-set li:nth-child(1)">
             <span class="nav-icon"><img class="icon" src="images/icons/list.svg"></span>
             <span class="nav-icon-label">Log</span>
+         </a></li>
+         <li><a href="#recent-page" data-activateone=".nav-icon-set li:nth-child(2)">
+            <span class="nav-icon"><img class="icon" src="images/icons/map.svg"></span>
+            <span class="nav-icon-label">Recent</span>
          </a></li>
          <li><a href="#user-profile-page" data-activateone=".nav-icon-set li:nth-child(3)">
             <span class="nav-icon"><img class="icon" src="images/icons/profile.svg"></span>

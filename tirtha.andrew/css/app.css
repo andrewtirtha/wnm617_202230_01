@@ -9,12 +9,14 @@
    --font-serif: Roboto Slab, serif;
    --font-sans:  Inter, sans-serif;
 
-   --color-neutral-lighter: #F0F4F6;
+   --color-neutral-lightest: #F0F4F6;
+   --color-neutral-lighter: #E7ECEF;
    --color-neutral-light: #D3DCE0;
    --color-neutral-medium: #768288;
    --color-neutral-dark: #555E63;
 
    --color-main-light: #FD003A;
+   --color-main-lighter: #FFE7EC;
    --color-main-dark: #E50027;
 
    --color-accent-lighter: #C9F98D;
@@ -23,8 +25,8 @@
    --color-accent-dark: #169239;
 
 
-  --header-height: 3rem;
-   --footer-height: 3rem;
+  --header-height: 4rem;
+  --footer-height: 3rem;
 }
 
 
@@ -94,7 +96,10 @@ a:hover {
 
 .form-control {
    margin: 1em 0;
+   border-radius: 2em;
+   line-height: 2rem;
 }
+
 .ui-mobile .form-label {
    font-size: 1.2em;
    font-weight: 600;
@@ -104,7 +109,9 @@ a:hover {
 .form-input {
    display: inline-block;
    width: 100%;
+   line-height: 2rem;
    border-width: 0;
+   border-radius: 2em;
    background-color: var(--color-neutral-lighter);
    font: inherit;
    padding: 0.5em 1em;
@@ -115,6 +122,8 @@ a:hover {
    display: inline-block;
    width: 100%;
    border-width: 0;
+   border-radius: 2em;
+   line-height: 2rem;
    background-color: var(--color-main-light);
    padding: 0.5em 1em;
    margin: 0;
@@ -123,7 +132,8 @@ a:hover {
    text-decoration: none;
    color: : var(--color-neutral-medium)
    font: var(--font-serif);
-   font-weight: 600;
+   font-weight: 700;
+   font-size: 1.2em;
 }
 
 
@@ -216,10 +226,11 @@ a:hover {
 
 .ui-footer {
    flex: none;
-   height: var(--header-height);
-   line-height: var(--header-height);
+   height: 4.5em;
+   line-height: 4rem;
    border-width: 0;
-   background-color: white;
+   background-color: var(--color-neutral-lightest);
+   color: var(--color-neutral-dark);
    box-shadow: 0 0 5px rgba(0,0,0,0.15);
 
    position: relative;
@@ -240,6 +251,9 @@ a:hover {
 
 .ui-header ul,
 .ui-footer ul {
+   padding-bottom: 0.2rem ;
+   padding-top: 1rem;
+   margin-bottom: 1em;
    position: relative;
    display: flex;
    list-style-type: none;
@@ -383,7 +397,7 @@ a:hover {
    height: 100%;
 }
 .map-placeholder {
-   background-image: url(../img/map.jpg);
+   background-image: url(../image/map.jpg);
    background-position: center;
    background-size: cover;
 }
@@ -403,7 +417,7 @@ margin-right: auto;
 
 
 .search-bar {
-   padding: 0.2em 1em;
+   padding: 1em 1em;
    display: flex;
    box-shadow: none;
    z-index: 2;
@@ -436,7 +450,7 @@ margin-right: auto;
    display: flex;
    font-weight: normal;
    margin: 1em 0;
-   border-radius: 0.5em;
+   border-radius: 1.5em;
    overflow: hidden;
    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
 }
@@ -446,6 +460,7 @@ margin-right: auto;
 .animal-list-image img {
    width: 6em;
    vertical-align: text-bottom;
+   object-fit: cover;
 }
 .animal-list-body {
    padding: 1em;
@@ -453,6 +468,21 @@ margin-right: auto;
 .animal-list-name {
    font-size: 1.3em;
 }
+.filter-bar {
+   z-index: 1;
+   display: flex;
+   padding: 0 1em;
+   gap: 1em;
+   font-weight: bold;
+   width: 100%;
+}
+.filter-bar.header {
+   overflow: auto;
+    font-color: black;
+}
+
+
+
 
 
 
@@ -550,9 +580,12 @@ margin-right: auto;
 /* foote nav */
 .nav-icon-set li.active {
    background-color: var(--color-neutral-lighter);
+   border-color: black;
 }
 .nav-icon {
     line-height: 2rem;
+    padding-bottom: 0.1rem;
+    padding-top: 0.2rem;
     display: block;
 }
 .nav-icon .icon {
@@ -563,6 +596,8 @@ margin-right: auto;
     line-height: 1rem;
     display: block;
     font-size: 0.8em;
+    padding-bottom: 2rem;
+    font-weight: 400;
 }
 
 
@@ -631,16 +666,21 @@ margin-right: auto;
    
 }
 
+.edit-icon {
+   position: absolute;
+   top: 300px;
+   right: 20px;
+}
 
-
-
+.settings-icon {
+   margin-top: 22px;
+}
 
 .user-profile-image {
-   height: 240px;
-   width: 240px;
+   height: 350px;
+   width: 100%;
    object-fit: cover;
    text-align: center;
-   border-radius: 50%;
 }
 
 
@@ -660,10 +700,13 @@ margin-right: auto;
    left: 0;
    width: 100%;
    height: 100%;
-   background-position: center;
+   background-position: top;
    background-size: contain;
    background-repeat:  no-repeat;
-   }
+}
+.imagepicker.replace input {
+   display: none;
+}
 
 
 /* User Settings Page */

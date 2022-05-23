@@ -103,6 +103,7 @@ const UserEditPhotoPage = async () => {
 
 
 
+
 const AnimalProfilePage = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',

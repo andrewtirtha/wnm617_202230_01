@@ -30,7 +30,7 @@ const makeMarkers = (map_el, map_locs=[]) => {
          position: l,
          map,
          icon: {
-            url: l.icon,
+            url:"images/icons/pin.svg",
             scaledSize: {
                width:40,
                height:40,

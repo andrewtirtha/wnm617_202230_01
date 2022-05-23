@@ -15,13 +15,15 @@ const makeAnimalList = templater(o=>`
 
 const makeUserProfilePage = o => `
 <div data-role="main" class="overscroll">
-            <br>
 
-           
-            <div class="user-form" id="user-profile-page">
-            <div class="text-center">
+              
+         <div class="text-center">
              <img src="${o.img}" alt="" class="user-profile-image">
-           </div> 
+             <a href="#user-edit-photo-page" class="edit-icon">
+             <img src="images/icons/pencil.svg" class="icon"></a>
+          </div> 
+
+           <div class="user-form" id="user-profile-page">
 
                <div class="user-profile-name ">${o.name}</div>
 
@@ -68,8 +70,8 @@ const makeAnimalPopupBody = o => `
    <div class="animal-list-image"><img src="${o.img}" alt=""></div>
    <div>
       <h2>${o.name}</h2>
-      <div>${o.type}</div>
       <div>${o.breed}</div>
+      <div>${o.color}</div>
    </div>
 </div>
 `;
@@ -166,7 +168,7 @@ const makeAnimalListSet = (animals, target="#list-page .animal-list") => {
    $(target).html(makeAnimalList(animals));
 }
 
-const capitalize = s => s[0].toUpperCase()+s.substr(1);
+const capitalize = s => (s[0]||"").toUpperCase()+s.slice(1);
 
 const filterList = (animals,breed) => {
    let a = [...(new Set(animals.map(o=>o[breed])))];
