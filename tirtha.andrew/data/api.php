@@ -198,8 +198,8 @@ function makeStatement($data) {
             `doglog_animals`
             SET
                `name` = ?,
-               `color` = ?,
                `breed` = ?,
+               `color` = ?,
                `description` = ?
             WHERE `id` = ?
             ",$p,false);

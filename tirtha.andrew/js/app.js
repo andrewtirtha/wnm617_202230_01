@@ -20,6 +20,7 @@ $(() => {
          case "animal-edit-page": AnimalEditPage(); break;
          case "animal-add-page": AnimalAddPage(); break;
 
+         case "choose-animal-page": ChooseAnimalPage(); break;
          case "choose-location-page": ChooseLocationPage(); break;
       }
    })
@@ -61,6 +62,10 @@ $(() => {
    })
    .on("click", ".js-submit-location-add", function() {
       submitLocationAdd();
+   })
+
+    .on("change", "#choose-animal-input select", function(e) {
+      $("#location-animal").val(this.value);
    })
 
 

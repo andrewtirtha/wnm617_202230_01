@@ -38,12 +38,12 @@
 
 
    <section data-role="page" id="signin-page">
-      <div data-role="main" class="display-flex flex-column">
+      <div data-role="main" class="display-flex flex-column main-background ">
          <div class="flex-stretch"></div>
          <div class="logo-main">
             <img class="logo" src="images/logo.png">
          </div>
-         <form id="signin-form" class="form" data-ajax="false">
+         <form id="signin-form" class="form form-with-bg" data-ajax="false">
             <div class="form-control">
                <label for="signin-username" class="form-label">Username</label>
                <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your Username">
@@ -52,7 +52,6 @@
                <label for="signin-password" class="form-label">Password</label>
                <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Type your Password">
             </div>
-            <br>
             <br>
            
             
@@ -63,8 +62,8 @@
             <div class="form-control" style="text-align:center;font-size:0.8em;">
                <p>New to the app? <a href="#signup-page">Sign Up!</a></p>
             </div>
-         </form>
-         <div class="flex-stretch"></div>
+            <div class="flex-stretch"></div>
+         </form>    
       </div>
    </section>
 
@@ -174,7 +173,7 @@
       <header data-role="header">
          <h1></h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#list-page">Back</a></li>
             <li class="flex-stretch"></li>
             <li><a href="#animal-edit-page">Edit</a></li>
          </ul>
@@ -246,8 +245,14 @@
             <li><a href="#choose-location-page">Next</a></li>
          </ul>
       </header>
-      <div data-role="main">
+      <div data-role="main" style="padding:1em">
          <input type="hidden" id="location-animal">
+         <input type="hidden" id="location-start" value="-3">
+         <div class="form-control">
+            <a href="#animal-add-page" class="form-button">Add New Animal</a>
+         </div>
+         <p style="text-align: center">or select one below</p>
+         <div class="form-control" id="choose-animal-input"></div>
       </div>
    </section>
 
@@ -323,18 +328,18 @@
       </header>
       <div data-role="main">
         <div class="user-form" id="user-settings-page">
+            <br>
+            <br>
             <div class=" card user-settings">
               <a class="buton" href="#user-edit-page">Edit User</a>
             </div>
             <div class="card user-settings">
               <a class="button" href="#user-password-page">Edit Password</a>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="hotdog color">
-            <a href="#" class="js-logout">Logout</a>
+            <div class="bottom-logout">
+               <div class="hotdog color">
+                 <a href="#" class="js-logout">Logout</a>
+               </div>
             </div>
 
         </div>

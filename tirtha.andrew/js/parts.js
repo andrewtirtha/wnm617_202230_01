@@ -4,13 +4,22 @@ const makeAnimalList = templater(o=>`
    <a href="#animal-profile-page" class="js-animal-jump" data-id="${o.id}">
       <div class="animal-list-image"><img src="${o.img}" alt=""></div>
       <div class="animal-list-body">
-         <div class="animal-list-name">${o.name}</div>
-         <div class="animal-list-breed">Breed: ${o.breed}</div>
-         <div class="animal-list-color">Color: ${o.color}</div>
+            <div class="animal-list-name">${o.name}</div>
+
+         <div class="row">
+         <div class="column">
+            <div class="animal-list-breed">${o.breed}</div>
+         </div>
+         <div class="column">
+            <div class="animal-list-color">${o.color}</div>
+         </div>
+         </div>
+         
       </div>
    </a>
 </li>
 `);
+
 
 
 const makeUserProfilePage = o => `
@@ -59,6 +68,12 @@ const makeAnimalProfileDescription = o => `
 <div class="card profile">
 <div class="animal-profile-color ">${o.color}</div>
 </div>
+<br>
+<br>
+<div class="animal-profile-title">Description:</div>
+<div class="card profile description">
+<div class="animal-profile-description">${o.description}</div>
+</div>
 `;
 
 
@@ -66,12 +81,27 @@ const makeAnimalProfileDescription = o => `
 
 
 const makeAnimalPopupBody = o => `
-<div class="display-flex js-animal-jump noclick-children" data-id="${o.id}">
-   <div class="animal-list-image"><img src="${o.img}" alt=""></div>
+<div class="js-animal-jump noclick-children" data-id="${o.id}">
+   <div class="animal-popup-image"><img src="${o.img}" alt=""></div>
    <div>
-      <h2>${o.name}</h2>
-      <div>${o.breed}</div>
-      <div>${o.color}</div>
+      <div class="animal-list-body">
+         <div class="animal-list-name">${o.name}</div>
+         <div class="row">
+            <div class="column">
+               <div class="animal-list-breed">${o.breed}</div>
+            </div>
+            <div class="column">
+               <div class="animal-list-color">${o.color}</div>
+            </div>
+         </div>
+         <br>
+         <div class="no-padding">
+         <div class="animal-profile-title">Description:</div>
+         <div class="card profile description">
+         <div class="animal-profile-description">${o.description}</div>
+         </div>
+         </div>
+      </div>
    </div>
 </div>
 `;
@@ -88,6 +118,26 @@ const FormControlTextarea = ({namespace,name,displayname,placeholder,value=""}) 
    return `<div class="form-control">
       <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
       <textarea data-role="none" class="form-input" placeholder="${placeholder}" id="${namespace}-${name}">${value}</textarea>
+   </div>`;
+}
+const SelectOptions = templater(o => `
+   <option value="${o.value}" ${o.selected?'selected':''}>${o.text}</option>
+`);
+const FormSelect = (options,namespace,name,value="") => {
+   return `
+   <div class="form-select">
+      <select id="${namespace}-${name}" data-role="none">
+         ${SelectOptions(options.map(o=>({
+            ...o,
+            ...(o.id==value && {selected: true})
+         })))}
+      </select>
+   </div>`;
+}
+const FormControlSelect = (options,namespace,name,displayname,value="") => {
+   return `<div class="form-control">
+      <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
+      ${FormSelect(options,namespace,name,value)}
    </div>`;
 }
 
