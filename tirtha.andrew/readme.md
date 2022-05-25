@@ -1,8 +1,12 @@
-Golflog - http://andrewtirtha.com/aau/wnm617/tirtha.andrew/index.html
+Links
 
-Golflog is a golf course logger app which lets you log golf courses and save them on your user profile. Every time you visit a course, you can log in a new visit and see what changed between each one, such as:
+Doglog 
 
-Score
-Weather conditions
-Which tee you played from
-Who you played with
+- http://andrewtirtha2.com/aau/wnm617/tirtha.andrew/index.html
+
+
+
+Assignments 
+
+- http://taylrdesigns.com/aau/wnm617/tirtha.andrew/csszengarden/index.html
+- http://taylrdesigns.com/aau/wnm617/tirtha.andrew/profile/profile.php
