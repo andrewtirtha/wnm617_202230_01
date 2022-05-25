@@ -140,17 +140,18 @@ a:hover {
    border-width: 0;
    border-radius: 2em;
    line-height: 2rem;
-   background-color: var(--color-main-light);
+   background-color: var(--color-accent-medium);
    padding: 0.5em 1em;
    margin: 0;
    outline: 0;
    text-align: center;
    text-decoration: none;
-   color: : var(--color-neutral-medium)
+   color: white;
    font: var(--font-serif);
    font-weight: 700;
    font-size: 1.2em;
 }
+
 .form-select select {
     background-color: var(--color-neutral-light);
     border-width: 0;
@@ -199,7 +200,10 @@ a:hover {
 }
 .hotdog.color {
    background-color: var(--color-main-light);
-   color: white;
+   color: black;
+}
+
+
 }
 .hotdog.color.bottom {
    background-color: var(--color-main-light);
@@ -486,7 +490,7 @@ margin-top: 10px;
 }
 
 .row {
-   width: 18em;
+   width: 15em;
    margin-top: 10px;
 }
 .row:after {
